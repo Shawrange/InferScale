@@ -105,6 +105,48 @@ class PrefixIndex:
             self.entries.popitem(last=False)
 
 
+@dataclass(frozen=True)
+class SuccessEntry:
+    score: float
+    expires_at: float
+
+
+class SuccessPrefixIndex:
+    """Success-history heuristic with TTL; no time decay or read refresh."""
+
+    key = staticmethod(PrefixIndex.key)
+
+    def __init__(self, config: RoutingConfig, clock):
+        self.config, self.clock = config, clock
+        self.entries: OrderedDict[tuple, SuccessEntry] = OrderedDict()
+
+    def prune(self, healthy_workers):
+        valid = {(w.worker_id, w.epoch, w.affinity_generation) for w in healthy_workers}
+        now = self.clock()
+        for key, entry in tuple(self.entries.items()):
+            if key[:3] not in valid or entry.expires_at <= now:
+                del self.entries[key]
+
+    def affinity(self, worker, prefix) -> float:
+        entry = self.entries.get(self.key(worker, prefix)) if prefix is not None else None
+        return entry.score if entry and entry.expires_at > self.clock() else 0.0
+
+    def remember(self, worker, prefix):
+        if prefix is None:
+            return
+        now = self.clock()
+        key = self.key(worker, prefix)
+        entry = self.entries.get(key)
+        old = entry.score if entry and entry.expires_at > now else 0.0
+        score = min(
+            1.0, old * self.config.prefix_history_retention + self.config.prefix_hit_increment
+        )
+        self.entries[key] = SuccessEntry(score, now + self.config.prefix_ttl_seconds)
+        self.entries.move_to_end(key)
+        while len(self.entries) > self.config.prefix_max_entries:
+            self.entries.popitem(last=False)
+
+
 def fixture_token_count(payload: dict, chat: bool) -> int:
     """Deterministic fake units only. This is NOT an LLM tokenizer.
 

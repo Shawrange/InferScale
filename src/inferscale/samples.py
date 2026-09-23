@@ -53,6 +53,16 @@ class RequestSample(BaseModel):
         return self
 
 
+class DecisionSample(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
+    queue_ratio: float = Field(ge=0, le=1)
+    base_score: float = Field(ge=0)
+    load_gate: float = Field(ge=0, le=1)
+    effective_gamma: float = Field(ge=0)
+    affinity_bonus: float = Field(ge=0)
+    final_rank: float
+
+
 class AttemptSample(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
     request_id: str = Field(min_length=1)
@@ -66,3 +76,4 @@ class AttemptSample(BaseModel):
     score: float | None = None
     affinity: float | None = Field(default=None, ge=0, le=1)
     seconds: float | None = Field(default=None, ge=0)
+    decision: DecisionSample | None = None

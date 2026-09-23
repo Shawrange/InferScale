@@ -4,7 +4,7 @@
 
 **P0–P3 已按秋招项目范围验收通过：可靠生成代理、四种路由、成本预测、Prefix 亲和，以及真实 tokenizer 接口。双 4090 服务器的四策略协议/usage 和路由日志已核对，GPU 取消由用户人工确认。P4 实验工具已实现并通过 CPU 验证，下一步上服务器试跑并收集正式结果。** 见 [P3验收结论](docs/validation/P3验收结论.md)。
 
-当前 P4 代码：157 项测试通过。P2 历史版本另有 20 分钟真实 socket 验收：7292 次成功、3646 次后端已确认取消，最终账本归零，见 [P2 验收](docs/validation/P2验收.md)；不将其冒充 P3 版本的长跑结果。
+当前 Prefix V2 代码：201 项测试通过（含原有 157 项基线）。P2 历史版本另有 20 分钟真实 socket 验收：7292 次成功、3646 次后端已确认取消，最终账本归零，见 [P2 验收](docs/validation/P2验收.md)；不将其冒充 P3 版本的长跑结果。
 
 ## 已实现
 
@@ -20,9 +20,11 @@
 
 Cost-Aware 评分、EWMA 和 Prefix 已实现，配置 `routing.policy` 可选 `round_robin/least_load/cost/prefix`。fake usage 是确定性测试单位，不能作为真实 token/GPU 性能数据。接口语义见 [API 范围](docs/API范围.md)，本轮进度见 [P3 实现与验收](docs/P3实现与验收.md)。
 
-上传租用服务器：见 [部署说明](deploy/README.md)。运行 `python scripts/package_release.py` 可生成 `dist/inferscale-p4-experiments.zip` 及 SHA-256 校验文件；包内有锁定依赖、CPU/GPU Compose、配置生成器、协议验收脚本，不含模型、密钥或虚拟环境。
+上传租用服务器：见 [部署说明](deploy/README.md)。运行 `python scripts/package_release.py` 可生成 `dist/inferscale-prefix-v2.zip` 及 SHA-256 校验文件；包内有锁定依赖、CPU/GPU Compose、配置生成器、协议验收脚本，不含模型、密钥或虚拟环境。
 
 P4 新增固定轨迹 open-loop/closed-loop runner、请求与重试日志关联、完整终态分母、窗口吞吐及重复轮次比较。见 [P4 实现与验收](docs/P4实现与验收.md) 和 [服务器操作步骤](deploy/P4实验运行.md)。先跑一次冒烟和一个 open-loop 轮次，再确定正式负载；尚无真实性能收益数字。
+
+Prefix V2 已实现并完成 CPU 验证：保留 V1，新增成功历史亲和分数、负载降权和显式 comparison spec。默认 P4 仍为四策略 36 轮。见 [V2 实现与验收](docs/PrefixV2实现与验收.md)、[六轮服务器实验说明](deploy/PrefixV2六轮实验.md) 和 [审核规划](docs/PrefixV2方案审核与实现规划.md)。本轮未运行 GPU 性能实验。
 
 ## 安装与验证
 

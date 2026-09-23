@@ -2,6 +2,7 @@ import asyncio
 import hmac
 import json
 from contextlib import aclosing, suppress
+from dataclasses import asdict
 from time import monotonic
 from uuid import UUID, uuid4
 
@@ -223,6 +224,7 @@ class ProxyResponse(Response):
                 prompt_tokens=self.features.prompt_tokens,
                 output_estimate=self.features.output_estimate,
                 reserved_cost=self.attempt.cost,
+                decision=asdict(self.attempt.decision) if self.attempt.decision else None,
             )
             try:
                 if self.first_forward_at is None:
@@ -443,6 +445,7 @@ class ProxyResponse(Response):
                     policy=attempt.policy,
                     score=attempt.score,
                     affinity=attempt.affinity,
+                    decision=asdict(attempt.decision) if attempt.decision else None,
                     seconds=(monotonic() - self.attempt_started_at)
                     if self.attempt_started_at is not None
                     else None,

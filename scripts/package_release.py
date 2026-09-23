@@ -35,7 +35,7 @@ def package(root: Path) -> Path:
             and "__pycache__" not in p.parts
         )
     paths.append(root / "deploy/Dockerfile")
-    destination = root / "dist/inferscale-p4-experiments.zip"
+    destination = root / "dist/inferscale-prefix-v2.zip"
     destination.parent.mkdir(exist_ok=True)
     manifest = {}
     with ZipFile(destination, "w", ZIP_DEFLATED) as archive:

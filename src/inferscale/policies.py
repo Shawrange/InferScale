@@ -1,8 +1,22 @@
 import math
 from collections.abc import Sequence
+from dataclasses import dataclass
 
 from inferscale.config import RoutingConfig
-from inferscale.models import WorkerSnapshot
+from inferscale.models import RoutingDecision, WorkerSnapshot
+
+
+@dataclass(frozen=True)
+class Selection:
+    worker: WorkerSnapshot
+    policy: str
+    score: float
+    fallback_reason: str | None
+    decision: RoutingDecision | None
+
+    def __iter__(self):
+        # Preserve the existing four-value unpacking API.
+        return iter((self.worker, self.policy, self.score, self.fallback_reason))
 
 
 class RoundRobin:
@@ -26,23 +40,33 @@ class Router:
     def select(self, model, candidates, loads, cost, affinities, costs_known=True):
         policy = self.config.policy
         fallback = None
-        if policy in {"cost", "prefix"} and not costs_known:
+        if policy in {"cost", "prefix", "prefix_v2"} and not costs_known:
             policy, fallback = "round_robin", "untrusted_cost_state"
         scores, ranks = {}, {}
+        decisions = {}
         for worker in candidates:
             count, outstanding = loads[worker.worker_id]
             q = count / worker.capacity
             score = 0.0
             if policy == "least_load":
                 score = q
-            elif policy in {"cost", "prefix"}:
+            elif policy in {"cost", "prefix", "prefix_v2"}:
                 score = self.config.queue_weight * q + self.config.cost_weight * (
                     outstanding / self.config.cost_reference
                 )
                 if policy == "prefix":
                     score -= self.config.gamma * affinities[worker.worker_id]
+                elif policy == "prefix_v2":
+                    base = score
+                    gate = max(0.0, 1.0 - q / self.config.prefix_load_soft_limit)
+                    effective = self.config.gamma * gate
+                    bonus = effective * affinities[worker.worker_id]
+                    score -= bonus
+                    decisions[worker.worker_id] = RoutingDecision(
+                        q, base, gate, effective, bonus, score
+                    )
             ranks[worker.worker_id] = score
-            if policy in {"cost", "prefix"}:
+            if policy in {"cost", "prefix", "prefix_v2"}:
                 # The current request is a common term in a homogeneous pool.
                 # Exclude it from comparisons to avoid erasing differences when large.
                 score += self.config.cost_weight * (cost / self.config.cost_reference)
@@ -52,4 +76,6 @@ class Router:
         minimum = min(ranks.values())
         tied = [w for w in candidates if ranks[w.worker_id] == minimum]
         chosen = self.ties.select(model, tied)
-        return chosen, policy, scores[chosen.worker_id], fallback
+        return Selection(
+            chosen, policy, scores[chosen.worker_id], fallback, decisions.get(chosen.worker_id)
+        )

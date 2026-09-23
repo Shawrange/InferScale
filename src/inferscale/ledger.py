@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from uuid import uuid4
 
 from inferscale.config import RoutingConfig
-from inferscale.features import PrefixIndex
+from inferscale.features import PrefixIndex, SuccessPrefixIndex
 from inferscale.models import (
     CapacityExceeded,
     InvalidTransition,
@@ -45,7 +45,8 @@ class RequestLedger:
         self._outcomes: Counter[Outcome] = Counter()
         self.routing = routing or RoutingConfig()
         self._policy = Router(self.routing)
-        self.prefixes = PrefixIndex(self.routing, registry.clock)
+        index = SuccessPrefixIndex if self.routing.policy == "prefix_v2" else PrefixIndex
+        self.prefixes = index(self.routing, registry.clock)
 
     def acquire(self, context: RequestContext) -> RequestLease:
         with self._lock:
@@ -110,7 +111,7 @@ class RequestLedger:
                 for w in workers
             }
             affinities = {w.worker_id: self.prefixes.affinity(w, prefix) for w in workers}
-            worker, policy, score, fallback = self._policy.select(
+            selection = self._policy.select(
                 lease.request.model,
                 workers,
                 loads,
@@ -118,6 +119,7 @@ class RequestLedger:
                 affinities,
                 costs_known,
             )
+            worker, policy, score, fallback = selection
             reservation = Reservation(
                 uuid4().hex,
                 lease.request.request_id,
@@ -131,6 +133,7 @@ class RequestLedger:
                 affinities[worker.worker_id],
                 fallback,
                 worker.affinity_generation,
+                selection.decision,
             )
             self._reservations[reservation.attempt_id] = reservation
             active.attempted_workers.add(worker.worker_id)

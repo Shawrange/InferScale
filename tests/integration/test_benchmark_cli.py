@@ -9,14 +9,18 @@ import yaml
 from inferscale.benchmark.__main__ import run
 from inferscale.benchmark.compare import compare
 from inferscale.benchmark.report import write_report
+from inferscale.benchmark.spec import ComparisonSpec
 from inferscale.benchmark.workloads import Item, Trace
 from tests.support import cluster, settled
 
 
-async def test_complete_cli_artifacts_and_recomputable_report():
+@pytest.mark.parametrize("policy", ["cost", "prefix_v2"])
+async def test_complete_cli_artifacts_and_recomputable_report(policy):
     base = Path("runs") / ("p4-cli-test-" + uuid4().hex)
     base.mkdir(parents=True)
-    async with cluster(routing={"policy": "cost"}) as (app, url, a, b):
+    async with cluster(
+        routing={"policy": policy, "gamma": 0.5 if policy == "prefix_v2" else 0.25}
+    ) as (app, url, a, b):
         log = base / "gateway.log"
 
         def record(**fields):
@@ -45,7 +49,7 @@ async def test_complete_cli_artifacts_and_recomputable_report():
             trace=trace_path,
             config=config,
             gateway=url,
-            policy="cost",
+            policy=policy,
             output=base / "result",
             mode="open_loop",
             capacity=4,
@@ -59,10 +63,30 @@ async def test_complete_cli_artifacts_and_recomputable_report():
             ttft_slo=1,
             e2e_slo=2,
         )
+        if policy == "prefix_v2":
+            routing = app.state.settings.routing.model_dump(mode="json")
+            spec = ComparisonSpec.model_validate(
+                {
+                    "schema_version": 1,
+                    "name": "socket-test",
+                    "workload": "mixed",
+                    "variants": {
+                        "v1": {**routing, "policy": "prefix", "gamma": 0.25},
+                        "v2": routing,
+                    },
+                }
+            )
+            args.comparison_spec = base / "spec.json"
+            args.comparison_spec.write_text(spec.model_dump_json(), encoding="utf-8")
+            args.variant_id = "v2"
         await run(args)
         await settled(app, a, b)
         summary = json.loads((args.output / "summary.json").read_text(encoding="utf-8"))
         assert summary["attempt_evidence"]["complete"]
+        if policy == "prefix_v2":
+            stats = summary["routing_decisions"]["first"]
+            assert stats["fields"]["load_gate"]["count"] == 2
+            assert stats["fields"]["load_gate"]["missing"] == 0
         assert summary["outcomes"]["succeeded"] == 2 and summary["attempt_count"] == 2
         assert "synthetic_backend" in summary["comparison_exclusion_reasons"]
         assert summary == write_report(args.output, log_text=log.read_text(encoding="utf-8"))
@@ -71,6 +95,11 @@ async def test_complete_cli_artifacts_and_recomputable_report():
         compare([args.output], base / "comparison")
         result = json.loads((base / "comparison/comparison.json").read_text())
         assert result[0]["usable_rounds"] == 0
+        if policy == "prefix_v2":
+            compare([args.output], base / "explicit-comparison", spec=spec)
+            manifest = json.loads((args.output / "manifest.json").read_text(encoding="utf-8"))
+            assert manifest["comparison_spec_sha256"] == spec.digest()
+            assert manifest["variant_id"] == "v2"
         raw_path = args.output / "requests.raw.jsonl"
         raw_path.write_text(
             raw_path.read_text(encoding="utf-8").splitlines()[0] + "\n", encoding="utf-8"

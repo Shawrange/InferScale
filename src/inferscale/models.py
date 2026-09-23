@@ -30,6 +30,16 @@ class RequestLease:
 
 
 @dataclass(frozen=True, slots=True)
+class RoutingDecision:
+    queue_ratio: float
+    base_score: float
+    load_gate: float
+    effective_gamma: float
+    affinity_bonus: float
+    final_rank: float
+
+
+@dataclass(frozen=True, slots=True)
 class Reservation:
     attempt_id: str
     request_id: str
@@ -43,6 +53,7 @@ class Reservation:
     affinity: float = 0
     fallback_reason: str | None = None
     affinity_generation: int = 0
+    decision: RoutingDecision | None = None
 
 
 @dataclass(frozen=True, slots=True)

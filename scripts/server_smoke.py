@@ -22,7 +22,7 @@ async def verify(gateway, workers, model, expected_policy=None):
         live = await client.get(gateway + "/health/live")
         live.raise_for_status()
         actual_policy = live.json().get("policy")
-        if actual_policy not in {"round_robin", "least_load", "cost", "prefix"}:
+        if actual_policy not in {"round_robin", "least_load", "cost", "prefix", "prefix_v2"}:
             raise ValueError("Gateway does not report a recognized active policy")
         if expected_policy is not None and actual_policy != expected_policy:
             raise ValueError(f"Policy mismatch: expected {expected_policy}, got {actual_policy}")
@@ -111,6 +111,8 @@ if __name__ == "__main__":
         "--workers", nargs=2, default=["http://127.0.0.1:8100", "http://127.0.0.1:8101"]
     )
     parser.add_argument("--model", default="inference-model")
-    parser.add_argument("--expect-policy", choices=["round_robin", "least_load", "cost", "prefix"])
+    parser.add_argument(
+        "--expect-policy", choices=["round_robin", "least_load", "cost", "prefix", "prefix_v2"]
+    )
     parser.add_argument("--output", type=Path, default=Path("runs/server-smoke.json"))
     asyncio.run(main(parser.parse_args()))

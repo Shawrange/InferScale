@@ -4,11 +4,12 @@ from scripts.server_smoke import verify
 from tests.support import cluster, settled
 
 
-async def test_packaged_smoke_with_remote_tokenizer_over_sockets():
-    async with cluster(tokenizer_mode="vllm", routing={"policy": "cost"}) as (app, url, a, b):
+@pytest.mark.parametrize("policy", ["cost", "prefix_v2"])
+async def test_packaged_smoke_with_remote_tokenizer_over_sockets(policy):
+    async with cluster(tokenizer_mode="vllm", routing={"policy": policy}) as (app, url, a, b):
         workers = [w.endpoint for w in app.state.registry.snapshots()]
-        report = await verify(url, workers, "fake-model", expected_policy="cost")
-        assert report["gateway_policy"] == report["expected_policy"] == "cost"
+        report = await verify(url, workers, "fake-model", expected_policy=policy)
+        assert report["gateway_policy"] == report["expected_policy"] == policy
         assert report["protocol_usage_passed"]
         assert len(report["checks"]) == 12
         assert not report["gpu_cancel_verified"]

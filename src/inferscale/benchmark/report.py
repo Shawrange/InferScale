@@ -51,6 +51,22 @@ def join_attempts(rows, log_text):
         if aid not in ends:
             continue
         end = ends[aid]
+        if start.get("policy") == "prefix_v2" and start.get("decision") is None:
+            raise ValueError("V2 attempt missing routing decision snapshot")
+        if start.get("decision") != end.get("decision"):
+            raise ValueError(f"attempt decision snapshot mismatch: {aid}")
+        if start.get("decision") is not None:
+            d = start["decision"]
+            if (
+                start.get("policy") != "prefix_v2"
+                or not math.isclose(
+                    d["final_rank"], d["base_score"] - d["affinity_bonus"], abs_tol=1e-12
+                )
+                or not math.isclose(
+                    d["affinity_bonus"], d["effective_gamma"] * start["affinity"], abs_tol=1e-12
+                )
+            ):
+                raise ValueError("inconsistent V2 routing decomposition")
         for field in (
             "client_request_id",
             "request_id",
@@ -73,6 +89,7 @@ def join_attempts(rows, log_text):
                 score=start.get("score"),
                 affinity=start.get("affinity"),
                 seconds=end.get("seconds"),
+                decision=start.get("decision"),
             )
         )
     joined = []
@@ -219,6 +236,38 @@ def cache_delta(before, after):
     }
 
 
+def decision_statistics(attempts):
+    """Attempt denominator; null is not zero. Sequence is retained separately."""
+    result = {}
+    for label, selected in (
+        ("all", attempts),
+        ("first", [a for a in attempts if a.attempt_number == 1]),
+        ("retry", [a for a in attempts if a.attempt_number > 1]),
+    ):
+        fields = {"affinity": [a.affinity for a in selected if a.affinity is not None]}
+        for field in (
+            "queue_ratio",
+            "load_gate",
+            "effective_gamma",
+            "affinity_bonus",
+            "base_score",
+            "final_rank",
+        ):
+            fields[field] = [getattr(a.decision, field) for a in selected if a.decision is not None]
+        result[label] = {
+            "attempt_count": len(selected),
+            "fields": {
+                name: {**distribution(values), "missing": len(selected) - len(values)}
+                for name, values in fields.items()
+            },
+            "affinity_saturation_fraction": sum(v == 1 for v in fields["affinity"])
+            / len(fields["affinity"])
+            if fields["affinity"]
+            else None,
+        }
+    return result
+
+
 def write_report(directory: Path, *, log_text=None):
     manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
     raw = directory / "requests.raw.jsonl"
@@ -238,6 +287,22 @@ def write_report(directory: Path, *, log_text=None):
     attempts, evidence = [], {"complete": False, "reason": "gateway_log_not_supplied"}
     if log_text is not None:
         rows, attempts, evidence = join_attempts(rows, log_text)
+        routing = manifest["config"]["routing"]
+        for attempt in attempts:
+            if attempt.decision is None:
+                continue
+            d = attempt.decision
+            expected_gate = max(0.0, 1.0 - d.queue_ratio / routing["prefix_load_soft_limit"])
+            expected_score = d.final_rank + routing["cost_weight"] * (
+                attempt.reserved_cost / routing["cost_reference"]
+            )
+            if not (
+                math.isclose(d.load_gate, expected_gate, abs_tol=1e-12)
+                and math.isclose(d.effective_gamma, routing["gamma"] * d.load_gate, abs_tol=1e-12)
+                and attempt.score is not None
+                and math.isclose(attempt.score, expected_score, abs_tol=1e-12)
+            ):
+                raise ValueError("routing decision disagrees with run configuration")
         (directory / "requests.jsonl").write_text(
             "".join(r.model_dump_json() + "\n" for r in rows), encoding="utf-8"
         )
@@ -248,6 +313,17 @@ def write_report(directory: Path, *, log_text=None):
         rows, manifest["duration"], ttft_slo=manifest["slo"]["ttft"], e2e_slo=manifest["slo"]["e2e"]
     )
     summary["attempt_evidence"] = evidence
+    summary["routing_decisions"] = decision_statistics(attempts)
+    summary["routing_sequence"] = [
+        {
+            "attempt_id": a.attempt_id,
+            "worker_id": a.worker_id,
+            "attempt_number": a.attempt_number,
+            "affinity": a.affinity,
+            "decision": a.decision.model_dump() if a.decision else None,
+        }
+        for a in attempts
+    ]
     summary["cache_cohort_deltas"] = {}
     for before in directory.glob("before-worker*.prom"):
         after = directory / before.name.replace("before-", "after-drain-")

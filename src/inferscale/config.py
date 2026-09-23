@@ -40,7 +40,7 @@ class WorkerConfig(StrictConfig):
 
 
 class RoutingConfig(StrictConfig):
-    policy: Literal["round_robin", "least_load", "cost", "prefix"] = "round_robin"
+    policy: Literal["round_robin", "least_load", "cost", "prefix", "prefix_v2"] = "round_robin"
     prompt_weight: float = Field(default=1, ge=0)
     output_weight: float = Field(default=1, ge=0)
     queue_weight: float = Field(default=1, ge=0)
@@ -51,6 +51,9 @@ class RoutingConfig(StrictConfig):
     prefix_ttl_seconds: float = Field(default=300, gt=0)
     prefix_max_entries: int = Field(default=1024, gt=0)
     gamma: float = Field(default=0.25, ge=0)
+    prefix_hit_increment: float = Field(default=0.25, gt=0, le=1)
+    prefix_history_retention: float = Field(default=0.85, gt=0, le=1)
+    prefix_load_soft_limit: float = Field(default=0.75, gt=0, le=1)
 
     @model_validator(mode="after")
     def nonzero_cost(self):

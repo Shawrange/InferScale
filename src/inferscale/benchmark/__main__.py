@@ -15,12 +15,14 @@ import yaml
 from inferscale.benchmark.compare import compare
 from inferscale.benchmark.report import write_report
 from inferscale.benchmark.runner import run_trace
+from inferscale.benchmark.spec import ComparisonSpec, common_routing
 from inferscale.benchmark.workloads import Trace, generate
 from inferscale.config import load_settings
 
 SOURCE_ROOT = Path(__file__).resolve().parents[1]
 
-POLICIES = ["round_robin", "least_load", "cost", "prefix"]
+DEFAULT_POLICIES = ["round_robin", "least_load", "cost", "prefix"]
+POLICIES = [*DEFAULT_POLICIES, "prefix_v2"]
 
 
 def digest(data):
@@ -48,6 +50,15 @@ async def run(args):
         raise ValueError("config policy does not match --policy")
     if any(i.max_tokens > settings.max_output_tokens for i in (*trace.warmup, *trace.requests)):
         raise ValueError("trace output caps exceed gateway limit")
+    spec_path = getattr(args, "comparison_spec", None)
+    variant = getattr(args, "variant_id", None)
+    spec = ComparisonSpec.read(spec_path) if spec_path else None
+    if bool(spec) != bool(variant):
+        raise ValueError("comparison spec and variant-id must be provided together")
+    if spec:
+        spec.validate_variant(variant, settings.routing.model_dump(mode="json"))
+        if trace.workload != spec.workload:
+            raise ValueError("trace workload does not match comparison spec")
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output / "trace.json").write_bytes(trace_bytes)
     source = SOURCE_ROOT
@@ -81,6 +92,21 @@ async def run(args):
         "synthetic": settings.tokenizer_mode == "fixture" or settings.model.name == "fake-model",
         "cache_condition": args.cache_condition,
         "slo": {"ttft": args.ttft_slo, "e2e": args.e2e_slo},
+    }
+    if spec:
+        manifest.update(variant_id=variant, comparison_spec_sha256=spec.digest())
+        (args.output / "comparison-spec.json").write_text(
+            spec.model_dump_json(indent=2), encoding="utf-8"
+        )
+    manifest["locality_capacity_bounds"] = {
+        w.worker_id: {
+            "worker_capacity": w.capacity,
+            "global_capacity": settings.global_capacity,
+            "max_pre_reservation_q": min(w.capacity - 1, settings.global_capacity - 1) / w.capacity,
+            "soft_limit_reachable": min(w.capacity - 1, settings.global_capacity - 1) / w.capacity
+            >= settings.routing.prefix_load_soft_limit,
+        }
+        for w in settings.workers
     }
     dump(args.output / "manifest.json", manifest)
     key = os.environ.get(settings.api_key_env) if settings.api_key_env else None
@@ -151,6 +177,8 @@ def main():
     run_parser.add_argument("--gateway", default="http://127.0.0.1:8000")
     run_parser.add_argument("--policy", choices=POLICIES, required=True)
     run_parser.add_argument("--output", type=Path, required=True)
+    run_parser.add_argument("--comparison-spec", type=Path)
+    run_parser.add_argument("--variant-id")
     run_parser.add_argument("--mode", choices=["open_loop", "closed_loop"], default="open_loop")
     run_parser.add_argument("--capacity", type=int, default=32)
     run_parser.add_argument("--timeout", type=float, default=60)
@@ -170,10 +198,18 @@ def main():
     cmp = sub.add_parser("compare")
     cmp.add_argument("directories", nargs="+", type=Path)
     cmp.add_argument("--output", type=Path, required=True)
+    cmp.add_argument("--comparison-spec", type=Path)
     plan = sub.add_parser("plan")
     plan.add_argument("--config", type=Path, required=True)
     plan.add_argument("--output", type=Path, required=True)
     plan.add_argument("--seed", type=int, default=42)
+    plan.add_argument("--policies", nargs="+", choices=POLICIES)
+    plan.add_argument("--comparison-spec", type=Path)
+    spec_parser = sub.add_parser(
+        "spec", help="Create an explicit Hot Prefix V1/V2 spec from the native config"
+    )
+    spec_parser.add_argument("--config", type=Path, required=True)
+    spec_parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "generate":
         trace = generate(args.workload, args.seed, args.duration, args.rate)
@@ -193,23 +229,81 @@ def main():
             )
         )
     elif args.command == "compare":
-        compare(args.directories, args.output)
+        compare(
+            args.directories,
+            args.output,
+            spec=ComparisonSpec.read(args.comparison_spec) if args.comparison_spec else None,
+        )
+    elif args.command == "spec":
+        routing = load_settings(args.config).routing.model_dump(mode="json")
+        spec = ComparisonSpec.model_validate(
+            {
+                "schema_version": 1,
+                "name": "hot-prefix-v1-v2",
+                "workload": "hot_prefix",
+                "variants": {
+                    "v1_g025": {**routing, "policy": "prefix", "gamma": 0.25},
+                    "v2_g050": {
+                        **routing,
+                        "policy": "prefix_v2",
+                        "gamma": 0.5,
+                        "prefix_hit_increment": 0.25,
+                        "prefix_history_retention": 0.85,
+                        "prefix_load_soft_limit": 0.75,
+                    },
+                },
+            }
+        )
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        with args.output.open("x", encoding="utf-8") as file:
+            file.write(spec.model_dump_json(indent=2))
     else:
-        args.output.mkdir(parents=True, exist_ok=False)
-        base = load_settings(args.config).model_dump(mode="json")
-        for policy in POLICIES:
-            config = {**base, "routing": {**base["routing"], "policy": policy}}
-            (args.output / f"{policy}.yaml").write_text(
-                yaml.safe_dump(config, sort_keys=False), encoding="utf-8"
-            )
-        rng, jobs = random.Random(args.seed), []
-        for workload in ["mixed", "shared_prefix", "hot_prefix"]:
-            for number in range(1, 4):
-                policies = POLICIES.copy()
-                rng.shuffle(policies)
-                jobs.extend({"workload": workload, "round": number, "policy": p} for p in policies)
-        dump(args.output / "jobs.json", {"seed": args.seed, "jobs": jobs})
-        print("Wrote configs preserving native endpoints and a randomized 36-job plan.")
+        make_plan(args)
+
+
+def make_plan(args):
+    base = load_settings(args.config).model_dump(mode="json")
+    spec = ComparisonSpec.read(args.comparison_spec) if args.comparison_spec else None
+    if spec and args.policies:
+        raise ValueError("choose comparison-spec or policies, not both")
+    policies = args.policies or DEFAULT_POLICIES
+    if len(policies) != len(set(policies)):
+        raise ValueError("duplicate policy")
+    if spec:
+        routings = {key: value.model_dump(mode="json") for key, value in spec.variants.items()}
+        if any(common_routing(r) != common_routing(base["routing"]) for r in routings.values()):
+            raise ValueError("spec common routing differs from native config")
+    else:
+        routings = {
+            p: {**base["routing"], "policy": p, **({"gamma": 0.5} if p == "prefix_v2" else {})}
+            for p in policies
+        }
+    args.output.mkdir(parents=True, exist_ok=False)
+    for name, routing in routings.items():
+        (args.output / f"{name}.yaml").write_text(
+            yaml.safe_dump({**base, "routing": routing}, sort_keys=False), encoding="utf-8"
+        )
+    rng, jobs = random.Random(args.seed), []
+    for workload in [spec.workload] if spec else ["mixed", "shared_prefix", "hot_prefix"]:
+        for number in range(1, 4):
+            order = list(routings)
+            rng.shuffle(order)
+            for name in order:
+                job = {
+                    "workload": workload,
+                    "round": number,
+                    "policy": routings[name]["policy"],
+                    "config": f"{name}.yaml",
+                }
+                if spec:
+                    job["variant_id"] = name
+                jobs.append(job)
+    dump(args.output / "jobs.json", {"seed": args.seed, "jobs": jobs})
+    if spec:
+        (args.output / "comparison-spec.json").write_text(
+            spec.model_dump_json(indent=2), encoding="utf-8"
+        )
+    print(f"Wrote configs preserving native endpoints and a randomized {len(jobs)}-job plan.")
 
 
 if __name__ == "__main__":
