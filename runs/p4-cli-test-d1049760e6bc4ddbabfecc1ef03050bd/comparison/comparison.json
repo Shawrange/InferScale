@@ -1,0 +1,28 @@
+[
+  {
+    "workload": "mixed",
+    "comparison_group": "f1885fb0cc28",
+    "policy": "cost",
+    "total_rounds": 1,
+    "usable_rounds": 0,
+    "at_least_three_usable_rounds": false,
+    "throughput_mean": null,
+    "throughput_min": null,
+    "throughput_max": null,
+    "ttft_p95_mean": null,
+    "ttft_p95_min": null,
+    "ttft_p95_max": null,
+    "e2e_p95_mean": null,
+    "e2e_p95_min": null,
+    "e2e_p95_max": null,
+    "round_outcomes": [
+      {
+        "not_sent": 0,
+        "succeeded": 2,
+        "rejected": 0,
+        "failed": 0,
+        "cancelled": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+workload,comparison_group,policy,total_rounds,usable_rounds,at_least_three_usable_rounds,variant_id,comparison_spec_sha256,throughput_mean,throughput_min,throughput_max,ttft_p95_mean,ttft_p95_min,ttft_p95_max,e2e_p95_mean,e2e_p95_min,e2e_p95_max,round_outcomes
+hot_prefix,0eb6d31140a3,prefix,1,1,False,v1_g025,5c448cd554516eb94f92d7feaa69d11982aecb962e1972962d9da8861ff249d9,1,1,1,0.1,0.1,0.1,0.2,0.2,0.2,[{'succeeded': 1}]
+hot_prefix,0eb6d31140a3,prefix,1,1,False,v1_g050,5c448cd554516eb94f92d7feaa69d11982aecb962e1972962d9da8861ff249d9,1,1,1,0.1,0.1,0.1,0.2,0.2,0.2,[{'succeeded': 1}]
+hot_prefix,0eb6d31140a3,prefix_v2,1,1,False,v2_g050,5c448cd554516eb94f92d7feaa69d11982aecb962e1972962d9da8861ff249d9,1,1,1,0.1,0.1,0.1,0.2,0.2,0.2,[{'succeeded': 1}]

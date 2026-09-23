@@ -1,0 +1,2 @@
+workload,comparison_group,policy,total_rounds,usable_rounds,at_least_three_usable_rounds,variant_id,comparison_spec_sha256,throughput_mean,throughput_min,throughput_max,ttft_p95_mean,ttft_p95_min,ttft_p95_max,e2e_p95_mean,e2e_p95_min,e2e_p95_max,round_outcomes
+mixed,bec7c774fdab,prefix_v2,1,0,False,v2,e828a8bd03b84ded3cfc9ef8dd9080a3f308908086f455dc0ad44c70bc04d3f3,,,,,,,,,,"[{'not_sent': 0, 'succeeded': 2, 'rejected': 0, 'failed': 0, 'cancelled': 0}]"

@@ -1,0 +1,2 @@
+workload,comparison_group,policy,total_rounds,usable_rounds,at_least_three_usable_rounds,throughput_mean,throughput_min,throughput_max,ttft_p95_mean,ttft_p95_min,ttft_p95_max,e2e_p95_mean,e2e_p95_min,e2e_p95_max,round_outcomes
+mixed,f1885fb0cc28,cost,1,0,False,,,,,,,,,,"[{'not_sent': 0, 'succeeded': 2, 'rejected': 0, 'failed': 0, 'cancelled': 0}]"

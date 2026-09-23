@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "jobs": [
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "prefix_v2",
+      "config": "v2_g050.yaml",
+      "variant_id": "v2_g050"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "prefix",
+      "config": "v1_g025.yaml",
+      "variant_id": "v1_g025"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "prefix_v2",
+      "config": "v2_g050.yaml",
+      "variant_id": "v2_g050"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "prefix",
+      "config": "v1_g025.yaml",
+      "variant_id": "v1_g025"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "prefix",
+      "config": "v1_g025.yaml",
+      "variant_id": "v1_g025"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "prefix_v2",
+      "config": "v2_g050.yaml",
+      "variant_id": "v2_g050"
+    }
+  ]
+}

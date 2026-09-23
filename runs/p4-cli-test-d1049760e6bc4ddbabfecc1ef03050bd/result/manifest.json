@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "run_id": "d906402e637d43a986a98930de5dcb22",
+  "status": "completed",
+  "round": 1,
+  "workload": "mixed",
+  "planned_count": 2,
+  "trace_sha256": "de17e61309fd9466827b34ca7a5b0b5c7775dfed63c9204bc9a91d7429ef932f",
+  "config": {
+    "model": {
+      "name": "fake-model",
+      "tokenizer_identity": "fixture-v1",
+      "template_identity": "fixture-chat-v1",
+      "context_limit": 4096,
+      "default_output_tokens": 64
+    },
+    "workers": [
+      {
+        "worker_id": "worker-0",
+        "endpoint": "http://127.0.0.1:38525/",
+        "model": "fake-model",
+        "capacity": 4
+      },
+      {
+        "worker_id": "worker-1",
+        "endpoint": "http://127.0.0.1:60125/",
+        "model": "fake-model",
+        "capacity": 4
+      }
+    ],
+    "global_capacity": 8,
+    "health_interval_seconds": 1.0,
+    "health_timeout_seconds": 0.5,
+    "health_ttl_seconds": 3.0,
+    "max_body_bytes": 1048576,
+    "max_response_bytes": 4194304,
+    "max_event_bytes": 65536,
+    "max_prefetch_bytes": 131072,
+    "max_output_tokens": 2048,
+    "body_timeout_seconds": 5.0,
+    "connect_timeout_seconds": 2.0,
+    "pool_timeout_seconds": 1.0,
+    "first_output_timeout_seconds": 30.0,
+    "idle_timeout_seconds": 30.0,
+    "overall_timeout_seconds": 60.0,
+    "downstream_timeout_seconds": 5.0,
+    "cleanup_timeout_seconds": 1.0,
+    "api_key_env": null,
+    "routing": {
+      "policy": "cost",
+      "prompt_weight": 1.0,
+      "output_weight": 1.0,
+      "queue_weight": 1.0,
+      "cost_weight": 1.0,
+      "cost_reference": 10000.0,
+      "ewma_alpha": 0.2,
+      "prefix_tokens": 32,
+      "prefix_ttl_seconds": 300.0,
+      "prefix_max_entries": 1024,
+      "gamma": 0.25,
+      "prefix_hit_increment": 0.25,
+      "prefix_history_retention": 0.85,
+      "prefix_load_soft_limit": 0.75
+    },
+    "tokenizer_slots": 2,
+    "tokenizer_mode": "fixture",
+    "tokenizer_timeout_seconds": 5.0
+  },
+  "policy": "cost",
+  "source_hashes": {
+    "__init__.py": "964ee42bae4ff2b3eadd88f0aefa39092c099997147976b4feae9f2ed20f1d60",
+    "api.py": "e87de74bd7a087f55ef3d1f464b61d2daa420497495ad8722fe0f15c34fe3ec3",
+    "benchmark/__init__.py": "19dd312f9c922f0f5bfe75f0d5f027597726b7ce9ff411ee82772dbcc547de7e",
+    "benchmark/__main__.py": "baf59f0052955db4f6bf7f88e94958fcdf3857a9c74d2863fca2d70dcdb5921d",
+    "benchmark/compare.py": "78fc7cb512e78c669c032fb75b0efd51c03612d3a21cf500c601e49442897da6",
+    "benchmark/report.py": "c9cf0fca5c5733a7960a7387b69ab7de48bb59662332d16e0b4ab1cd2493f543",
+    "benchmark/runner.py": "1ae9177c233e1c6b47777336c1847d5cc93968fbd2024788aff18d5d999f5337",
+    "benchmark/spec.py": "051c674842578b632398143d462fa5dc6d722f3db7869e44e829e0760d53fac8",
+    "benchmark/workloads.py": "98eb34356fdf3f6fc182f1c0ec93e0bda573462d319c78150c39e6adb5a00164",
+    "config.py": "bea2e53acf088635ad58ab405828695251e27ed2fb9a06382fdf255701a5eb2a",
+    "features.py": "db300cbb134120ca38d7717106e47a43c856240c95cd2dc1d729323393203071",
+    "ledger.py": "3f1ce74a48e07501a1bb258c0dfc26ad903f26921d90413991ca837f3ec9f491",
+    "lifecycle.py": "067e04e8c02a3a74674a7842418a443e485bdb883d6a3241cb3c66f5932c078d",
+    "main.py": "0026269f06287449d4302c44a74aa02bef7cb2d452cf8e11902d552cfbbcc83d",
+    "models.py": "eac545392650905670e2b02275a9a80711a65a24ec9058b43bd119fc823e6575",
+    "policies.py": "fe8989824b7a355a7482cabf9205413dca5f5b3393f6892e507534ac12328986",
+    "proxy.py": "ee3e3641d951a4d940422c438ba85d67c4024963b4be3cce8ec5b5ad0f18d402",
+    "registry.py": "2598a4144a65a97fb509a313f1a34265e6512e468db1ee3c285194a674940b8e",
+    "samples.py": "c3e56d6d5ac0fc5e20edaa7454843dff1c4f6f0759b53cc29293467faf58eb4d",
+    "sse.py": "f4558b2f69969fc3095fcf9f4f336d0afafac523505892788cceede1cd49bb1f",
+    "telemetry.py": "56eafac578bdefba0aa9787f158d64fa48d1bffde1d2c6ca44e177c6e4c43851",
+    "testing/__init__.py": "1ce7bc7efc2cf637a9c2cfb8c30969be218428e8445f27c36476ba4adfd2a7cf",
+    "testing/worker.py": "e2b4c492fe1228435a6fe461458a071f27268ed4aca844d4acc5fab2732a6dee",
+    "tokenization.py": "a5bc4be3079b8735b78cb157ba54c4d33f5d3e38e548f5af8dd4bb512b3b77be"
+  },
+  "environment": null,
+  "python": "3.12.3",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "pydantic": "2.13.5",
+    "fastapi": "0.139.2"
+  },
+  "synthetic": true,
+  "cache_condition": "fresh_seeded",
+  "slo": {
+    "ttft": 1,
+    "e2e": 2
+  },
+  "locality_capacity_bounds": {
+    "worker-0": {
+      "worker_capacity": 4,
+      "global_capacity": 8,
+      "max_pre_reservation_q": 0.75,
+      "soft_limit_reachable": true
+    },
+    "worker-1": {
+      "worker_capacity": 4,
+      "global_capacity": 8,
+      "max_pre_reservation_q": 0.75,
+      "soft_limit_reachable": true
+    }
+  },
+  "mode": "open_loop",
+  "duration": 0.3,
+  "capacity": 4,
+  "client_timeout": 2,
+  "drain_seconds": 1,
+  "lag_tolerance": 0.1,
+  "load_generator_limited": false,
+  "scheduled_to_sent_max": 0.0009647045284509603,
+  "outcomes": {
+    "succeeded": 2
+  },
+  "preflight": [
+    {
+      "prompt_sha256": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+      "prompt_tokens": 11,
+      "backend_context": 4096
+    },
+    {
+      "prompt_sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+      "prompt_tokens": 17,
+      "backend_context": 4096
+    }
+  ],
+  "warmup": [],
+  "metric_errors": []
+}

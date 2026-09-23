@@ -1,0 +1,247 @@
+{
+  "planned": 2,
+  "sent": 2,
+  "outcomes": {
+    "not_sent": 0,
+    "succeeded": 2,
+    "rejected": 0,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "error_subtypes": {},
+  "window_seconds": 0.3,
+  "window_successes": 2,
+  "drain_successes": 0,
+  "request_throughput": 6.666666666666667,
+  "output_token_throughput": 20.0,
+  "window_usage_complete": true,
+  "success_usage_coverage": 1.0,
+  "rejected_per_sent": 0.0,
+  "failed_per_sent": 0.0,
+  "rejected_per_planned": 0.0,
+  "failed_per_planned": 0.0,
+  "ttft_seconds": {
+    "count": 2,
+    "p50": 0.015586444176733494,
+    "p95": 0.017141770850867034
+  },
+  "e2e_seconds": {
+    "count": 2,
+    "p50": 0.020490833558142185,
+    "p95": 0.02206124262884259
+  },
+  "failed_or_cancelled_or_rejected_seconds": {
+    "count": 0,
+    "p50": null,
+    "p95": null
+  },
+  "tpot_estimate_seconds": {
+    "count": 2,
+    "p50": 0.0010485975071787834,
+    "p95": 0.0013499948196113109
+  },
+  "chunk_interval_seconds": {
+    "count": 4,
+    "p50": 0.0012711891904473305,
+    "p95": 0.0014536801725625991
+  },
+  "scheduled_to_sent_seconds": {
+    "count": 2,
+    "p50": 0.0005680656060576411,
+    "p95": 0.0009250406362116283
+  },
+  "slo": {
+    "ttft_seconds": 1,
+    "e2e_seconds": 2,
+    "goodput": 6.666666666666667
+  },
+  "attempt_count": 2,
+  "final_worker_distribution": {
+    "worker-0": 1,
+    "worker-1": 1
+  },
+  "length_finished_successes": 0,
+  "attempt_evidence": {
+    "complete": true,
+    "missing_request_ids": [],
+    "unfinished_attempt_ids": []
+  },
+  "routing_decisions": {
+    "all": {
+      "attempt_count": 2,
+      "fields": {
+        "affinity": {
+          "count": 2,
+          "p50": 0.0,
+          "p95": 0.0,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        }
+      },
+      "affinity_saturation_fraction": 0.0
+    },
+    "first": {
+      "attempt_count": 2,
+      "fields": {
+        "affinity": {
+          "count": 2,
+          "p50": 0.0,
+          "p95": 0.0,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 2
+        }
+      },
+      "affinity_saturation_fraction": 0.0
+    },
+    "retry": {
+      "attempt_count": 0,
+      "fields": {
+        "affinity": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        }
+      },
+      "affinity_saturation_fraction": null
+    }
+  },
+  "routing_sequence": [
+    {
+      "attempt_id": "b0b7fb89dda84b7a99fed71ec38f30d2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "86608fea9a6242a99a7dc100cf9ef659",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    }
+  ],
+  "cache_cohort_deltas": {
+    "before-worker0": {
+      "valid": false,
+      "reason": "missing_series_or_counter_reset",
+      "hit_ratio": null
+    },
+    "before-worker1": {
+      "valid": false,
+      "reason": "missing_series_or_counter_reset",
+      "hit_ratio": null
+    }
+  },
+  "comparison_exclusion_reasons": [
+    "missing_environment_record",
+    "synthetic_backend"
+  ]
+}

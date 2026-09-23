@@ -1,0 +1,58 @@
+[
+  {
+    "workload": "hot_prefix",
+    "comparison_group": "47b8be789c9d",
+    "policy": "prefix",
+    "total_rounds": 3,
+    "usable_rounds": 3,
+    "at_least_three_usable_rounds": true,
+    "throughput_mean": 1,
+    "throughput_min": 1,
+    "throughput_max": 1,
+    "ttft_p95_mean": 0.1,
+    "ttft_p95_min": 0.1,
+    "ttft_p95_max": 0.1,
+    "e2e_p95_mean": 0.2,
+    "e2e_p95_min": 0.2,
+    "e2e_p95_max": 0.2,
+    "round_outcomes": [
+      {
+        "succeeded": 1
+      },
+      {
+        "succeeded": 1
+      },
+      {
+        "succeeded": 1
+      }
+    ]
+  },
+  {
+    "workload": "hot_prefix",
+    "comparison_group": "9475ce0ed97f",
+    "policy": "prefix_v2",
+    "total_rounds": 3,
+    "usable_rounds": 3,
+    "at_least_three_usable_rounds": true,
+    "throughput_mean": 1,
+    "throughput_min": 1,
+    "throughput_max": 1,
+    "ttft_p95_mean": 0.1,
+    "ttft_p95_min": 0.1,
+    "ttft_p95_max": 0.1,
+    "e2e_p95_mean": 0.2,
+    "e2e_p95_min": 0.2,
+    "e2e_p95_max": 0.2,
+    "round_outcomes": [
+      {
+        "succeeded": 1
+      },
+      {
+        "succeeded": 1
+      },
+      {
+        "succeeded": 1
+      }
+    ]
+  }
+]

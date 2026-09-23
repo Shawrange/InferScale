@@ -1,0 +1,221 @@
+{
+  "seed": 42,
+  "jobs": [
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "round_robin",
+      "config": "round_robin.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "cost",
+      "config": "cost.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "least_load",
+      "config": "least_load.yaml"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "prefix",
+      "config": "prefix.yaml"
+    }
+  ]
+}

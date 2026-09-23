@@ -1,0 +1,1 @@
+{"comparison_exclusion_reasons": [], "request_throughput": 1, "ttft_seconds": {"p95": 0.1}, "e2e_seconds": {"p95": 0.2}, "outcomes": {"succeeded": 1}}

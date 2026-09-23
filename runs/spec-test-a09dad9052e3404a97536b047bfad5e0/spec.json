@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "name": "hot-prefix-v1-v2",
+  "workload": "hot_prefix",
+  "variants": {
+    "v1_g025": {
+      "policy": "prefix",
+      "prompt_weight": 1.0,
+      "output_weight": 1.0,
+      "queue_weight": 1.0,
+      "cost_weight": 1.0,
+      "cost_reference": 10000.0,
+      "ewma_alpha": 0.2,
+      "prefix_tokens": 32,
+      "prefix_ttl_seconds": 300.0,
+      "prefix_max_entries": 1024,
+      "gamma": 0.25,
+      "prefix_hit_increment": 0.25,
+      "prefix_history_retention": 0.85,
+      "prefix_load_soft_limit": 0.75
+    },
+    "v2_g050": {
+      "policy": "prefix_v2",
+      "prompt_weight": 1.0,
+      "output_weight": 1.0,
+      "queue_weight": 1.0,
+      "cost_weight": 1.0,
+      "cost_reference": 10000.0,
+      "ewma_alpha": 0.2,
+      "prefix_tokens": 32,
+      "prefix_ttl_seconds": 300.0,
+      "prefix_max_entries": 1024,
+      "gamma": 0.5,
+      "prefix_hit_increment": 0.25,
+      "prefix_history_retention": 0.85,
+      "prefix_load_soft_limit": 0.75
+    }
+  }
+}

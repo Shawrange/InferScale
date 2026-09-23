@@ -1,0 +1,4786 @@
+{
+  "planned": 660,
+  "sent": 660,
+  "outcomes": {
+    "not_sent": 0,
+    "succeeded": 650,
+    "rejected": 10,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "error_subtypes": {
+    "global_capacity_exceeded": 10
+  },
+  "window_seconds": 60.0,
+  "window_successes": 623,
+  "drain_successes": 27,
+  "request_throughput": 10.383333333333333,
+  "output_token_throughput": 1492.9666666666667,
+  "window_usage_complete": true,
+  "success_usage_coverage": 1.0,
+  "rejected_per_sent": 0.015151515151515152,
+  "failed_per_sent": 0.0,
+  "rejected_per_planned": 0.015151515151515152,
+  "failed_per_planned": 0.0,
+  "ttft_seconds": {
+    "count": 650,
+    "p50": 0.10155163332819939,
+    "p95": 0.1423421351239085
+  },
+  "e2e_seconds": {
+    "count": 650,
+    "p50": 2.300494020804763,
+    "p95": 4.585116267390549
+  },
+  "failed_or_cancelled_or_rejected_seconds": {
+    "count": 10,
+    "p50": 0.005635250359773636,
+    "p95": 0.01665107076987624
+  },
+  "tpot_estimate_seconds": {
+    "count": 650,
+    "p50": 0.017279108289599887,
+    "p95": 0.018079129594752167
+  },
+  "chunk_interval_seconds": {
+    "count": 92857,
+    "p50": 0.016540665179491043,
+    "p95": 0.024198812246322633
+  },
+  "scheduled_to_sent_seconds": {
+    "count": 660,
+    "p50": 0.0007414223456940761,
+    "p95": 0.0027564323422581967
+  },
+  "slo": {
+    "ttft_seconds": 1,
+    "e2e_seconds": 10,
+    "goodput": 10.383333333333333
+  },
+  "attempt_count": 650,
+  "final_worker_distribution": {
+    "worker-0": 327,
+    "worker-1": 323
+  },
+  "length_finished_successes": 611,
+  "attempt_evidence": {
+    "complete": true,
+    "missing_request_ids": [],
+    "unfinished_attempt_ids": []
+  },
+  "routing_decisions": {
+    "all": {
+      "attempt_count": 650,
+      "fields": {
+        "affinity": {
+          "count": 650,
+          "p50": 1.0,
+          "p95": 1.0,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        }
+      },
+      "affinity_saturation_fraction": 0.8276923076923077
+    },
+    "first": {
+      "attempt_count": 650,
+      "fields": {
+        "affinity": {
+          "count": 650,
+          "p50": 1.0,
+          "p95": 1.0,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 650
+        }
+      },
+      "affinity_saturation_fraction": 0.8276923076923077
+    },
+    "retry": {
+      "attempt_count": 0,
+      "fields": {
+        "affinity": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "queue_ratio": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "load_gate": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "effective_gamma": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "affinity_bonus": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "base_score": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        },
+        "final_rank": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "missing": 0
+        }
+      },
+      "affinity_saturation_fraction": null
+    }
+  },
+  "routing_sequence": [
+    {
+      "attempt_id": "41569a325cd24f77b26b89ce23cf9c3a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0aeb1b627bbd40b9bf96d19a2e343041",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a8c58d5944bb4c89ac03f64a605e9d57",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b006e01cda884b009f77ba5f1591ea69",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9d15761358374c1d8e51fd86909ec45b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c37af8b916ea4fa6b5d0e80eca2a6ca1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e4174ddd15f342309f70c279bc41f145",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "23372be62a254624b6cee52a0d3bc588",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3332b1c8275642c0a1e09f07775698d0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a8d4283e742b452583a71b647260381c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fdb3ba6f000640a391ef1c64cb9a1cfc",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "11fefc83cd7b4b81927e51b13b45cbe1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e220a4d2d44b4ab9848a7f82dc5965bb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b32a1458e87243ab895642d5e68e6d6c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d6a7c9edde1043c681b4c2d037fc6a19",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ecc9b33d38f14c5aa94e628e327773c5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a19190b3ec914f02b862b0332537746d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c1f36d8d5d224b69abdbcc0b7202ed17",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6f41143bd51e4057867862c4ac211a30",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a3dd38f318034873b399321445e3b306",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e921b8164dae441f981c2cad62bf4a26",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "70e52c081f53402ca65a3a3ec6104e2b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "12cc99f2738349dfaff9c7c34d724fe1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2e79ea4d03464231a8a260de3707048f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6f8eddebb50b49918b85f0ae169208b8",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2c16ab8f9b744e6dbd36c44bf19ed8fa",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "79a76238e22e47398efa3a4dafaa48ff",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2ec6711c7c484a1f909b1fc82ffa1024",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b9ed8007d09447aaac2c1b6e3c9aa376",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9f009757323449628ab5a31ce0dc1a7c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "440beeee2bbb4969a1b23029f003b1bf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "167df88e184a4b65b6e952995941ebae",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "343e3fb202f941c1921f299ab6415823",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "434e6a4a0d544a319ce3871f42faa8fa",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "738377887be3488ebbc791e8626cc159",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "496c6390ca524fe5bd36291196b2a779",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7d7e6971a9994868a038ef81a59b61c3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5576dc4792084c049cb2695ad1690d93",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "434900c2a051440da3a79d1ca6992ec4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "56c7499cc3b74950a20b58985fd52d3f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "61db6d8d309745f8860bf32d21d81bff",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "44b164cc4f164f2cb71607a5417cbb64",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fedd992988f04ae2941678ca7f79350e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c3886c275f504ad6b151598c753558d8",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "65375c9d19f24217b327ba834c77cfca",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "15d4f1edc5f64bc9a9fcf12a1cae29f9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c9f9a4475de3408998d1d49e0c758cb9",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6e0f47dd3cec4966bac8aea03b7bd91b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c6c0f64228ab4c879aef7704f033ae27",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8d4776605c5f41588512418610b623e4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1e0506ddf4b3488488862b4958dcec58",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f64edad3eadd4259a48b2e80f4de75e0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "55fa4437c9884280bfcdec977c23e3e9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bccbd164deb249b19b4dadb3d3c2245e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9ccc2b45b60b4995a4f6623aea11654f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7febf7c4c0184d6a943e3f39d93f2612",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0924cfbece194088a51b564da8eb8fb6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "84f87278f7564374b74c60f0bae01ee6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a29930ab5afd4d379c10c82408a5cc11",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "80dff421bfbe4c1fb9a67b492fe29bb0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "42332303fd6a41db996cb1e1bef04680",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "85b86332142942b8adc281c4ca8199de",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2c0eaf7345cf47128cedd4400a69839d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "473b9bae9c03464a87366d77b6d041ca",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a003ed8cc57d497b9195d28fd75b2428",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ba247e0b2f434c51b531fd23b0dfeb51",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "456fdfce70354dce9b6af2b6f1cf44be",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f3874787353143c9a6043e8269b48ccd",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8767e13f775e4bfbbcc0b3074f45c747",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "43de1dce8b534b7c87e69a8e429220a5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "105933d6ae0e43c7b479fe9825b0c31d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4bba7c3ec8364e2e8849630d4053d5c6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cc3d948f55874f889aef1cdab611ccc3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fbeb8ffa5ff14d84a79ae8b39c07301c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9a691640942d4fd6b2990e6961958e3b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "857aa340a154484d9b2e0589ac7f2f1b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5053ae7729684646a9fe090087ce1fd4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b0dcfe60f20c46d98e982ffc3f291ac9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6ea9e3de609d4f42ae5e48bf912cd12a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "64aecdb8732244fd85f2693e564c2d39",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5752c31067724fc3b6eebc56b1b61132",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5d28e8da99e5420383b226e700ea6c62",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "440b3904193143948015d8e5cfe6d2a5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d1376ec350f340b5824d1ee5d0db095b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c67d4abe32274ed087b4ccd9b5749902",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4122699276e842bcb2e1a1d65a33dda1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f4050978033d48f6b5a170380255126b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7944c32588954c98ab9cf6ca4e87ea8c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2c8f17deb431403cb8fc6e788fcf14a7",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "95dd5792105a4283a5a46a24ed3b79b0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2f9d6c6245814a98b781f682f527969f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2ff9348e85c34c29aa983189b86688eb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d2ea2533c07c4d2ba2d824bc507ce6f9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a9b74ed34b244ee8bbb003a84db877bb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "17829bd3800a48d391419bb58a5985f3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3c1297dd879f49c7a2989ae0260036a7",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b02a271c5a5f4edf80b3629a3211d375",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7f4b3cee337c42fca6ac651b347e2f0f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "96e73b9d69a641ec8ef9ca91d1322ac4",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6e54b169606841ef84ccf577f889497e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "629b990e3127420c9c349873e297bef1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "92666513a43f458baf886d8581e67ad0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "633fd69b135d4b08a1b58594a010c2cb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4a5c188e7f884f1ba90ce63a45ee8c0b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0234ba1133514cc3bdec60a365f2db4c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c043dbbf97774efba78c17f0a59e882e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0f05660b025847308762b7efce5cd82a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e88a03f8b57a4cf098edb63d87b40d19",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fea880bafbd043e2859a78de42f95f5b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1b921558ba554b80a27ef633bec5a7c0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a7eaf84ddb3a40048059cbfb48e048e5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "49438a323c3b4039b3170d5475953eb2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "456119dc27344c748b3b2b0892c49988",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c8a078383e9542629bd39b3ce7c1d54c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8bb71bbefa64a05b6dc65a3e3bf3ac9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fb7477c7a4ca4008a3505dc453a4e1ec",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3d378188f63449fe98b14c45c829bcab",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "19d669f8990b49a296e21708ba8e088a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "949bf6ed4c8f4f0a8a5ca7a940145405",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "813da04131c542c586a5e241844f21da",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "19169de44b4d41a7aaa63974ec849676",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7378117f43a1439ca8d120bebcb5069e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "05ffae5d6ec2492c95ce6e985abd670e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "67460d8d8e084f7caae11f1599ff9a8e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "16a21b35be874c43a847c1a1c821a256",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "12f1cbc7207d4b4c93edf5283d6aea6d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3b0d4f730c7f468a9a70ebb3985f6439",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "854644371b774507bdd9c790f80fdbd5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e55f1b38120d4655b25a38a030aa3275",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2a24b3bc8f2548cb8a6cfb6b8611b430",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "80e218718a724f06805cc36bcfb60a5a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "51c0396cd6ae4b67965aafad96348251",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "41aab72add894948bc7936be428e6dcf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c5d15d9fc1fc44b2813dfe691620ea52",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f3f98eeaec45403bacb8b375e9981a40",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "237f41edda7f4af2bd1992bc46bccc88",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d4acee62f06a4ecc8077baa03e2da2b4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0fca18576646487882be8b8342a3cfa4",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "49b25393a7454bea91c33f5d5bde5514",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "21f8d544183342a0a3cb2d2a2569f82d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d41c5b21830145c9913fea0bd916ee8a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8c841f8149648b596f94b5b51327b5e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "aa86e5823afa453e98d527ba2a0eb647",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c9954f6fce184e258888823c0e9cac47",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a1752980d4f046159134d710f2713803",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a12403008582403380db8d7aa41fe39c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dfe8ae32d9f64144aaf2909f12e83ae3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "63f520047ecc4d44becd750ce3b89631",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "42ddf5a154bc4230a6ca3811ff326e08",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "986f20efcda1409c9d58ae489bd76b38",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "375205c50a56479c9140d35b7717b36b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "03365d5075f04d2599ee8fdd28b4b405",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f43c292ce2b24102808428fd24a75de6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "10e9e30215d247629e2556f7bf39cbbe",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6dbd95df5ae1447199d7ab630f321eac",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "095f7ae1744b41ba81b19c15c5514bb8",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f874671ab42941e394274588a97fd824",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "904f048bbe52479db302c56adfae4ca6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f7af78b4e8f94d7cbb42f49b5ccaf2e3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cebf338583fc40fabeafa8d6f171bd4d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "618c20e1000c4238b7746a41142eca06",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "46951defa77b40efb022b58c5b47a899",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "31eab36ed38d4fd6b9004e3d40a7cb12",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b2d7fe296c374627ae9e430e32e402da",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "33873884d23541a9a78540a2c470deb0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "85388d12716d46b8878fcc5e39e41072",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f02f7832deef4f6cb78e84ecbce128c2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "711f14f94656463d84b381456cb48abb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "34a54be78435481c80b8183d96ce3e86",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "36b45ee5f2d742dfac45ace5fe6e9a51",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "01e62c5e9f3842de85c2de5f15f1febd",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8f8da0367dfb43819f5f20480611da1a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f61ab81066d24b33a58daebfb9ece8c6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ec247351258a4add9892a7ea96fb2e1d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "24d0221192304e9db181ef968ea68f23",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4951d6b0bf334915bff43b7984d21bf4",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e54b13e7a3d444ecad41db6f7b6892bc",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7f37f289cfcc418fa67b09fe626778c4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "16fcdccf92694309bc827bee8d75a330",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "de3350a644c54bfaa8acce956d097695",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3ce7fe381cec4fdd8dcebb11ac697410",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2868318bebc54c92aac0266f53f1b7af",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1909dde7d63e4eba8356e17a040dd3de",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "85b3289d8cb549219ed5eb56e73f0839",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a4ea384a3c8347a594807fa5be0a64ff",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "746c789eeec242c384b55624b47cccfd",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0d9a0a07b59c4c7e92215fa69effa020",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b719b7c4bc154a17961b662a0a13fd1f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1fc2b87f2bb34c468ab95e93574e3d8f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fe29a4eb398b4a499425dc392dc69169",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2ee58b1b06424c869d4c7096610dbd25",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "59f2a70ef5004d52a9e41246a4705220",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f28d552e513c46fc89cebab79e471caf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8bace20eff847d597c986dba7efcf1c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0ccca007a6274f07a4d395d870fc7227",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "48d2f2b25c474a1c97b91bfecfa748c3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8cddce4b59a44cea9c0ef2c8798b0248",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0c0cfc79dd95424aabafd6cfa964fc15",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7a653099f7b64990bb4b102993b91d1f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b8d15241f1794ba08d35e907e5972978",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "10159ff83a6148c18bd4c8728a41e931",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0d5a24af1c024d2b87176b72ef1fd254",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b073f1e6ad574ca3b6708d35662c1263",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "711deadfc6954f378bf9a3a1863fcfd1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a424712bc46e43239a10a7c9514d6b50",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b52befabf6fb4f82a7bfe8504e04e4bb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "69ed939d270842fe9728ee08bbdb13a1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1cb352a432824f638a3c90a3541f37b2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "270432b015d74f2f93345b7a95bdfb0d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5729da07680f4abda42a10f8fc9fd00b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "969ab090fe2f4482b9e0edd6a695978c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "78d6ffc4984a42a59e7851bd4627adad",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "899ee649d8fb409f94d04d49f88d4f42",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e8a0934e16d44309b4febf2a123fcc7a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d9843865fad0477e8ce2866ea9187142",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9afea3a423334fe28bdd751f89181833",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fe3df76bd061428d9058286accb987d1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "699c09a44094466a8c43eb586088ac9f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d6395b74727d4096bb9b14199799c3bd",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "891b956ea6294cda924698f03d0c68fb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2098404d52444d77b6d9b0658d747e63",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8e31bd3988b84618b3b80cb7852bea2d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f5960e69e2a54d69b35f8850afecffbf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4bf4b63a1c9145aa89aac1afa2234ffe",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c4916eb9486741d2a8e960f8e47254cd",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f415b197dc33403aa513eee4b9a9dd29",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7473edc80edd4c24aab20c23b2201350",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "77bc967e8264487aa87799e35ea3ad02",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3a83dfe31c054a1687ed39062912c7af",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b975e6dce18b4373ae6760d66f51bbbf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0b2a14ffcb584846aaa65f14894b6643",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7d7d3442e0d7451783e75aebefc5ab29",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cdc187c055584906aa942818344739b3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8383546b2d34a22aef4a0edd9994065",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ff6d85a1d62341369ce529b5bb76eb41",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "312dadf651d74d2cb8e9682bdbec38aa",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "99d363d7dcf949b99a87d26e1d6b6a50",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f22eb4985de4402c9d0dae1f67bdde1c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d9803aa1c085409a80f6fbf7ea9ae2f3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b691a2377c594ec692c1e4c367c2a544",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "88ac53e1cd2a4d8581151c522c343b5f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ee87dc2523b2494a860ef8f436961fb6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "24fface6727d443180b1dc9424f9c4f1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0588508383854f6a9c4c2d1fee1d05ce",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "304503c5a98a488890361db33423a227",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1b1d74a696df47578a302da20ed4d548",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "20924793d5da4ff7a53d717c5bde917a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a4924e6be073412398098e37aea7580f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fe65e3cf6e0c42cbaa6d1d7343b2c47f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5cae7d3ff82e4ec1a664ab2f0b5e599c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "63bcb16ef8724b8590671cad0d1b836c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b00a2b8cdbd542a0aba22175f300208c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "27b118ac435a49329f24fdfe2e140156",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "78a4730da0c24f3eb3dcfea9b74c0843",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "070bc61e1d824f15b45d24a0fbce1cf7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ea7b217fe6934f8eb77959c957749dff",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7de1ab1a09284a28afcdba8db9f98081",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6e115475a19a4810851459853903bc2b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1481748185434f9f804f70880ec40212",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e271bb3879034e319fcf8c80ddabe397",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "508cb8c4eb954c049e53151c5f969c61",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b428de3f25414eba934dcf3d2aef835f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6f75572eeac0457fbe4904ad78b81a34",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "42ed9fffc85d4019b0db9985e642229a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "16134bd2971743a180c96da853f63160",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0e9b339700694babb153b173a752bd24",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f8c23591a3184c1e847f7a4077532255",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1a287b158f314ca889382e004880788c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "46499c7bd56f49ecafe3db6302eea2b6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "01dbe367afd74f819d6b5309fad51b9e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7e370ffe15f84602a6c82082f0035188",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2d769ae2b808418382cd577a07ec5574",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5ff5e5e1fe4248a8b4276b0e89a6ae9b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a7a7be7e23e447b185814e60b7a9208c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f5b95245b1404444a4a0f76373672152",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "46da177ef24e4e75a6c24368cf563a7e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c6b0d33a427a494c9dc644cf2a6234f2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8c08adb4b0704210843fdf6f2177b0b5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5ffb2c4532a94b1eb8405987dc15c007",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "db16f150f9004959b95975197cfd5ba5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "21f11a9625894983828de576427bb66a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "433fdac5e9ae4eac94f00270d45204b6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8bf59e2b462441ea5acc910622941b1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ebcd7ab849964fd7b0ca372f622314a2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "916acc56fb0e4df7a90b19ab5e903822",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "550bb52a352941c091158013fca7b568",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "caa1965cffe84166807baacee63d9a1e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9198258add0d4240ab2d6536fbdfb360",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "09463062bcdf4b83aa39dc385c6c62bd",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ce1135fddc0a458f9fd7848b65fff36f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c312dd6037a24748a468929da148164c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2964f6d19b6145e0bc25411138ac412c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "85a34ea808844fc2acb9cd92e1eb2347",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "16360edf6a8740b08f90d126634392a1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "27efbdb9780747e3b3d25cf5bb2ba56d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "46a926b314a34580ba510840c2c00380",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a7d5c68c48354e8cb690b0bf65e8ea3f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "051ad633d052486e91f7ff06a7324db6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "956f72d802c54f06824b5d617f3f3046",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "552511ea05594feba3460891cb94813d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1e3931ce4b7d499abfdec09eff1c9eb6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8f7ea463ef62415b908a10d9c0bff440",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "94198a909e704e999dc77ba9188575c1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5a6f01b024e04a8fa1c4c92c2405273b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "af8fa8725ea74e39a7c861a9c644737c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "aa4f0a3507c645d8b3828d82b8ae9666",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "757044e4208748469fadfda5ce2df297",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c21ef469cfe443b9a8f9e84c59574032",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f3ff6cfd39c0458982f26b4c818c82af",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "26825b4aa76340c4b2438662e05789ec",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3140e664b56d4650a5cc679f4ab1caf4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "721ecf0e5c5f4070afe3c597629a1f4c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "944fc82a7dc24a0cb0a878f381d5f956",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e571a3ba1c4447c68d2a95e49f13bc20",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7575bebdb2f9412fbd23a125fdd9b75f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cfa296bd928f441d9856ced2b0941740",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "67f48a5470284e6895a461509ae8053e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e24c656770fd4a7c8f326bf8ab3cf07f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5065642e96df4c9ca0e00ac1630786d1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7455cf6de04b461783f2c0004ef5c656",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7c3065e144744c2c97b66e5ec60b5580",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6a3d1eb372ff4f2f899ad55aea7dafae",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5e7ae27018f0459eb9ea80698a7fc5d5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c4255df6f76e491baa6ded9dca6a7139",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a6321ef0e45b41518adb5b762d9e83a7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1a65d4515c054974adfc097575093d72",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5eb02af466e74251b26aaa2980361783",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "24844c7be4894ba9b6816e341bae3436",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "20fa23aedfb448298915754dd162c433",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bc5111481b3c4830b37054e2f67b8ab5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "340ae640cddd4140a1241eb1e6d39b22",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3b5a7cea0223495ab9d57a22bb617605",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2f90e96e46ee4ee4bce2d96e172cc6fb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "efe0f1dc294b47798e90e0de33ab461c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6f7f192304a7406e8a4abfc2aa58bbc6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b7558ae0781c46d4823012cf68066d80",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b2fcf65c8afb40d186da8ea5b8074299",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8c5ad3e6fe3c432c9a8d30abb6c0b250",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "310a3acc080c48fc99d6bfcd213fae53",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7d1c5f0c50474a66b78b33585f07d06a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6cc9e513052d45eeb28c4663bf34b3b2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5eb76e46c2204bfeb8d8a683b55211d9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "190dd8dcef21471aaa7f041eee41ac4f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1f25ad4ef1e24c25aff300c3439bc748",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4ce691cd952146d7bcf315d62beb6079",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "45ef7c677ff741f8bad4d05220d131e3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7321e6823a5348518cc250a50d7a1943",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4ef49b3e8a184aa496da3a61564f5ed4",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2679d1df2d9943b898a52e24585f25ed",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6a22b584f7374dedaa9266550018cba8",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3c1054c9b99d40cbbb2b49f35d6ab6a3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4aba6d094dff405db87c8686d7c03e28",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d31b8894d0a3483bbb983792f4bdd371",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a8b6477c4d174bcc82b52814111e2038",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a2ca55fb6d384066bcf9728b6cb24bb4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d9332a9e952d44a0be0b8664225e80c0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d049494832fe49b0b04a33e4aef7d25d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bb71e413924b4336b004402e6be12d38",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "22dcd486c3c44252afd1be827a97c46b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bb349c26d7f647348d3000fe68a981be",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1158aafd1c354cf5a1498e40e32d73a0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b4b9d414e8f841baa0f75e7d66d77601",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8f588d391cd2455cbc7b252362f06aed",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6b105d8de6784481b9f1d08cd4baaa94",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dbc03ef1b5db4af6909327b53831214b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "48c013a541be437f886f36da12ebdd7b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e3be86d3166f4ddc8d637b8e8e8eed5a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e6d8d41b207e49898c74023b5b584c76",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "570ab0c450dc41279336f82424703050",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "efc9b780e94d48eb9d522b35461c2460",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f4ab02c78e3f4c5a8284e82bb343689c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3056d6b5bd4141deb911574b4864dbbf",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ae2b91cc81714db2a69781b5eeb176e7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e2c4f47978814007b9c8d9ea481ebb85",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ae3992e04ddb41d098e59c3fc9cfafa0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4dcdd4b5b8a845ab94430e8c6eb9cd41",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b67823ae60c64241b72fbcb6640f099d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a72e8e8d86ee463e992fe553ded739d3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "99967816ad2c4b75b5cb0f33344af07c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "21ba21d2a70b443181feadc8c00937d6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "58c1eee734da440f9f595441e022f43f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8ca557f5045144d9a44d7e2297c63764",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b467c7d952b84a7fbf23cdd03504cf82",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c8c1fcfe7be04ebeab647f6fc06230f5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "448c6311ddc74ff2a54fd7a165427ccc",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4f146d6aabd0448f98d2c9b013dfea71",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d3c3de134205455cb08eef94c705bd05",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c3a03c3917874b72ac664d4afcc4abe5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1021e47640264797a4e896dca9fd3a1a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8301392964294343a904d4ae99a1cfb4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "453b0b76036b461d91a6cf636c0fb55a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "01effa9803574ee1acdad120ee83b6c1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6d6ceb654746434fa5d24f21f39f544f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d1684c6926b7438baa9a2ffd8cdfc4b0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1833956109bd43de90b6fee2517e9791",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "03579545ca9d4345b0be902460eb6c73",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "37208a8d64834ed99bd57fba573ed046",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "023a3fad0a55470797a45e29752c89c3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e6f0c299afd244f7b048b74034089f12",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a717af02a6c74722a1cbc0ed8831c345",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "41b04cfa417e4c569490e16976ea9609",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "870cb353b6ed4df5ad13115fdd65c588",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a3ace7a7e7254a42bc85437f3681c2aa",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c99bedaea5f54f24a6fa7dbda1602582",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0c62784c9d81442e9c13aa9144514f6d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0ccb106793b44406a7a9366a05de9f83",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3dc28757ebb44472b4212f999a5e8f40",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7e9fabedc15f4ae9aec205b3505cd7af",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6caa398e3f8e47a2b9174f3b51737508",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0dfc0ebaafdb4bd48c1cc42c73d64a51",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e7ca8c75775541a69b7092b20b950cd5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e004513227a84a0faebf31ee8aa588b4",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "99297226ed594922972aa55e7eb02a90",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f31990ae19e04d578e120836b59090b0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3e10d134bf574d2a8503b893df75cc5d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9615c774098542c890894456bc86da28",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "763382a1cf35447785c2352d0ca88f5e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "da19e0fda117410688c5df5284d530fb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "93285cd864f94428893c95f5bd2f1993",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ab06f78483ea4752b84583d62f9e2bfb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "93496f9f503541718585c559d22c41ac",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c9a8792125044ae197cf08ce26428d12",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2bb0ddf526724180b8348d6dc919a89c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "230ba6466dfd49d286e229b934dfefa0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "57e3be256847487a9931cb88ac79706c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ef39eaff03a64760adcdeb71ecf3128e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8e49e8e0c6a14e199fcafff7ff8dd434",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "625583331c70418c92492d97cb77e9b2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "077602a775ba44699416abed513b5928",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a3cbdfc81876422f8d2d8b1ce8b55020",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f058f3d16b7a45459baed76079bcaee5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e93325468e9f491e9a0137fc6a2d8455",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a9476d3d9f8546dfb8b86302468b32ab",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8fdf9b1c61f64678844eb1a4ade97ca2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "69ec9c9b64794e59bbbe9569bbc41b62",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "730fecb871454ab1889cb66b257014db",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "25fb45bdf8284086b1ac0eed9c65a149",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9029413152df45428e1365529af83bd1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0466e4d73fb34921b1af7c4d06577d49",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "934ba5f9b82149e8a7012db27f469626",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b95278c48c4945528d771e11cbf88fe0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a6892501b30d4831a1e6fbf256dd92f3",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9c7c6463c38848b88e5796d5092e81e1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8294e991703245b887bb029dbbb173eb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a6ebe19651f941efb54e490f015d4414",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "02e6cac6192c4eb7a21acdaec219d0f4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4bb44dd7637d49fe9b31a53b43aaeb02",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e346ab6195db40d0a2631cbce78d4e7e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "698a210e2d4e4d4a93a0266a8c818525",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "49a85f54c581411da4ee0a7699d4d013",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d44c1aaf59224e67aaa9ff42eac9faea",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2489aaed156e48e6951bf4e9fe5583b3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "919653c4ddd14c33838264edeae03a62",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f6bc05f9cb4d42b390b0a03370b0b9a6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dad52b0646524944bf4c2118a529c5b0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ea50cda8d6254385b3553526f7cdc115",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b96c7261cc1e4bb9aafb508c25e58022",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8238dd9409d64d629f3a6b931048aca4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b207c21f67ca4766944c28a49c7a34ab",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dec65e4d8cf94137829ad329659a377d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "eb75b14610454be7bf1aa7ed4506c423",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "45a8d5e8dfbb4850b01faa51f99ee83a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c57acaa37fe341d082f31ab9f75e5f88",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5292c55d84b944e7bfbdc77a04d5cfdd",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9ef261cfea5a4c53b1ef6db52789c8e7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ab19188d2e9640a2a756a5592e14ca68",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c8873bdfff0a4a2eae2348cec2430078",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4a37bf1492414e19a1e2ffae164f494d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a713ca4cae1f4477af3bb1f77b7463af",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c41d113182bf4e0d9ccf0841d03e9fe2",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "41f189e60a884db0b54b09d33f83931d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dc00347909ff4b4d8c96000ff193c3b5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1c93f7b19af24de1a7d055212f0fabc9",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "31289f0b0f3b4c1581420d4e3f057c07",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "05ce971335be4a938100dcf886a14f16",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fd791383e8654a1287953c68a4ad9d8e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e24ae1ae0f5949439d0ca8aa2b925fdc",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b095f75de59547a59f4eb6dce7b953c2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5765c1fffaca4fcf8b29eff0ee47ae03",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "60f6fa4409384cf290240bfcfe1ece06",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1dd006d6fdc34b1883b1f9ef47c36fd5",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "637e3f2084de42a8b19b1a49e40d2767",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9e812f63b4fa4ce3909c700adc05ba8e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1edfc3331d3a4505a4b258b67a1db51f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7d9dd3b2daee40549732fa6ab9d56b2b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "52861983bc0648b28343f690e75480cb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cdb47b1f8e69483989728c35263f41d4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6ea023b8e0014ef191e2da2d288bc9b8",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4ecd247428724d9aae5629001f8ad721",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "018d81db735d43ada2c4d789d78b432c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "aa7b7bba9a094d7fa02d1eda6a40ca5c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "91dbe04a80674af8b6e007578ef1843e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "328d7572c62346b9b77dba0ff07f7897",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f1024882cc5f4d03980d141e9daaba6c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9fb0ceeb3c9546b9b5a50d96bb031904",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "83f8bae6cfa74955abd1fc75ad436c98",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3c107eaa39554a44b53c20a3418b6b24",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "17df902df0394dddbbb81f2cd9debb55",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "de740116e5a64c448b250f345044b130",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8d944d8421c0478d8ec703b552a6764d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b7719109363d426c82217db469df58c0",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3ba5bb62ca5e4df1a06071e8b7b114e7",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ce5767e142354be9a7db1680067bf143",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6616fe93f4a74e45b0f24034f1ae0541",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d8ca0f36edc3404d9b370f57c4129e65",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c63ce104c38e478c83f72db0fd1f090a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "23ceeaf073984ee1959ff89b8a740a8d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f5a399fcf9fc40e39070c44961a414e1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "accc383df6d54aba8d61db13bb714c5e",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cf035061277b43cbb390704a231540a4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7fa97f5e609f461592572180e86c199d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0612d11a48e24db694d8eb0bcba6f2a1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5991e2e079634f10999bb5ce93020da3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "75fd184bb9134914b11dfa55c9835c8e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8f02bfd5b4744789a6ce83af816a0f93",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "91ed7c1ad71e483ab84ed1a41f867e9c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9b40ebb454a148a3b9c2da761407c47f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "736c8ab0b4784fe7b533179d836de2df",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ca106c0250d64be287d5fb6a2df66b23",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "648d24a78c494595b68b16b0b96b22a7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "310376e37590490aa489167c8bfdef10",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d20e7d1408cc4a118ffd526a4cb18251",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "43525e86aa674f92b4315b7095363439",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "d5528168b876469ba6d5c857de76d1ca",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "91a0bc29541f430aad4a3dc9ca310e2f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "72ee632ee5ca486db7ef90d241fb027b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "55cda6fb3e4a4d78b8f4ed211ee79746",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f81feccaf9dd4cff8a123799c3e55a09",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "35dd1825ef1046c8902b885d3247b8c9",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0808fe960ed94bd2b96d2571332506c9",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a843fb7e675b4ec5a0563517f844ef01",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "df23a024ea1245d49f8ba8e86ba636a5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e5ded8c89b8f40e5998d2c2d60acdc08",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0c6e8666782d4e62a354ec59a7a2c0ef",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "89a517e124b849c0980c4367c44665bc",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a1d3ee40d1974347ac187325c49d8580",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8121a1e31e8b4fd2a00d3212bf36b6a0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f319b05cb1114556a9ba30f3b89b5e24",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cb702170a5f546559b4772b9891e58f2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e78a5a422ae840b2a73ed3f5bfd99fdb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0c63b0de14a446038cae600a8cdcba82",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e01de24eed5f4ab3a66c689a76179527",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "67f728c530484c8ab9b4318ae32550ce",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bf3499c75b074904919aa3efe509609f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0ac4b930454d42e2a765a0434f26fae7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c8520e4b060748a7b061578efcfb25b1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bcbac49784cf4fa99eb9a72161371ce0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "01be8b2eeeba4d499588e53f2baa9678",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7c52f972e49d4e3b899308f8110db398",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4ba2df673cb34b6bb15a5701a0022053",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8ab5cdca79c1419eb6f5da7de5ef7608",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "feb7a8798e804d3fa229487d1c3de915",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5656143c67d84e9e90ed5571b346e880",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dcbffcee0ff9433aa2ad978f42549ecf",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "00b45e1bef5a4dc999fdb5e8a88a55a7",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "46bdb5b970a14e3fb4fb3f91c9cb447f",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e1c9e340340642539cb1bfc6df8e6bd9",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3f5e7f202e804e55bc69c679772ce62b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fbf715e6ae8248459851c0164fe0c7c7",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4ce5b566d4f24ba6a19bccc3b5e206f7",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "07d1079103184fc1aa1556b1fd032b21",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8b88ba43dd014261b610a8f942b6923b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f2388119e7464a64bcdf3dc852cc5de9",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5f41a0f651b4460ea115187d383bbac4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "dea93867494f41b583198f4802b01715",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8be362bef15a4590905f5d76bcec6f3f",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ffdf350c4f8e4c40b19ba787b6348e56",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b376e328776c4cfc9def366d13512653",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "384f4c0591174280a675b65518e69307",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "427a40449d3d477ca4c5ca8aed7d7411",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e62418c4e7f84a21b4c10aa304c28d6c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "273a5794942d4398b35bc8d53df3bdb2",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "93845ba89e94474682e30715dbdf5619",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7a5f1023249e4a0c8dbf500feb8f360e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "00830ea1243c48c68ff814145df407e6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a87186802d944ad8a45fadffdb0a4ca8",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cc2b966e3bab43d3ab2fae795c97a243",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e75933061b7e48b7adca5b1180c65beb",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a56a8660bda1431f9353665c9f2b5f58",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1cc11712f01844e8b7afafe20cd399c6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0228b3a8f7854546b45304b35001bfb6",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "514c509db0d843d1a36c0c953f48bd50",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f5479965558247e08ebaaf7a0b85bc59",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "924c7fa5ed4e4ec3ae3b1634d0a12d32",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5237930b936045ae81965316001273ee",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2380efb6dc934aebb321d04df17f9a9b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "25505cb76db1416fa06fcdbf884208a8",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "63cc1638a7384216a5b09d114c001bf5",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "fc9b47f5c8724eddaef5c792030ce714",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "15ff2e097e4a4fb197a9e3c1b36908c8",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2bc2422df1c442c983fa306c2542dc7c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0952a662de0c4f11be0f7b59e87b7a1a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7ae30a7db08044f19e7e55ae733476da",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "e20301bf9df04f87a06577b2b1c7c58d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6889328d54554b25ac73f975adc642d1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "6d63603977fb44ae8d0570681c17e82e",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0cb348049fdf41d3a37cd49699d230c4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "20fd0431a45a4b0aaa6973b3da276631",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a627d1057b1b42009d08fb3642041087",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "59971a7388fa42ee8c0908c57a1b2966",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "31eadc01bc994d86b76799c456b06830",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a689c97085544e1fbc7c83c9028694b1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "9f6c2c53a0904511b8a4c19de1a92819",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f3261845d66e430a846064bf24fcadf4",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2a1e65eff08f4bf7a6c8f203182dd60a",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c9ca6c3a2a5c466f9f9eb0055f5372b8",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8698fe535b9740fca2052b7c605a9e7c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b0e82c8369dd4243b6db4c33585dd66d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "7eb19acb1b7844debf1d5770c2753d4d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "06122fd565bb40d9896c1bfc8d7ee677",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "bacf5b22bd9c457b9bd056035bd404b1",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "df829f7e979f429e870f6596687095ff",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8a0d02a0dead41be8d12f76da98e5609",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "5aded7f50d3c4e958316883af1abc6b0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "faa3724cc70c4ca78514df7fc109ff0a",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8a73dbac67cc4107a414a6bd40b8501b",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "072f950ce23b474985898dcd09101a98",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "658e9ae5d9c040b49eb28865f6c8af7d",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "64e1ad9347534321b21fa7b4d2bb7fb6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2a869b5ce1204038a4bbb6f3650778c6",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2fa78d6cd6944aad80ce7adedde0b90d",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "de4cc4f6858947178046cdb300ee3ded",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "cf9a72d04f73468caa267e328fff8cda",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "114c10583c534124b25366ec9a85d741",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2de06d65a0fb4b8e9f9bb8aff6957506",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "00a5fce51ee74c38845a526f073d0019",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "681959501985402fa584722f69aa7501",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1c5627ca55034bbcafb7d2bb4d702610",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "c7fa84439c6b4b70860047dc2b7196e0",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "48fc92838fb44b37b15ea82a67f0881c",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "8c607c65f6544f4493addd4481a54aaa",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "91dcc72761ce497fbe921c1968fc1003",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b452e16da41846b086d1ce86cda4ead8",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "04fb5d484ede48569f1f91938c918d85",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 0.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a64d4fb9a61b4c23bae6967a54d84e49",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "b1fe16d821c144e685bed26578667f54",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "0525e1945f7641d6b99333d7ed3a38b3",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "77ca2d26c9c144e8b678187fd47d6015",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f919035981c94a60a0ec89d67ba93b70",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1b8bdce67d5a4007984e13b7d2dfb799",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "f795964cabed41a394234d10eb918d79",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "2c2f7bb613e140f7b6e1ddff13c26a41",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "ed24b0a86dce4fb39c0be3683e7b37c1",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "72c256d9356e49d2a5bb0838b76898fb",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "a57812ef77f0464d959bfe9bfeb0b88c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4b0816a5e8924eac98b62a3ca8361977",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "1003c56eea5a466cbec45273016f502b",
+      "worker_id": "worker-1",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "4160cf7acaed48a7ab102e5342361c8c",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "43b189435c27460889e1567684d31476",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    },
+    {
+      "attempt_id": "3d07e40e57da45d9b443d7266eaacb64",
+      "worker_id": "worker-0",
+      "attempt_number": 1,
+      "affinity": 1.0,
+      "decision": null
+    }
+  ],
+  "cache_cohort_deltas": {
+    "before-worker0": {
+      "valid": true,
+      "unit": "tokens (verify backend HELP)",
+      "queries": 167269.0,
+      "hits": 133808.0,
+      "hit_ratio": 0.7999569555625968
+    },
+    "before-worker1": {
+      "valid": true,
+      "unit": "tokens (verify backend HELP)",
+      "queries": 165300.0,
+      "hits": 129568.0,
+      "hit_ratio": 0.7838354506957048
+    }
+  },
+  "comparison_exclusion_reasons": []
+}

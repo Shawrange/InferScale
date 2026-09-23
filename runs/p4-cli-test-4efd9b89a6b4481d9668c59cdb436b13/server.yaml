@@ -1,0 +1,51 @@
+api_key_env: null
+body_timeout_seconds: 5.0
+cleanup_timeout_seconds: 1.0
+connect_timeout_seconds: 2.0
+downstream_timeout_seconds: 5.0
+first_output_timeout_seconds: 30.0
+global_capacity: 8
+health_interval_seconds: 1.0
+health_timeout_seconds: 0.5
+health_ttl_seconds: 3.0
+idle_timeout_seconds: 30.0
+max_body_bytes: 1048576
+max_event_bytes: 65536
+max_output_tokens: 2048
+max_prefetch_bytes: 131072
+max_response_bytes: 4194304
+model:
+  context_limit: 4096
+  default_output_tokens: 64
+  name: fake-model
+  template_identity: fixture-chat-v1
+  tokenizer_identity: fixture-v1
+overall_timeout_seconds: 60.0
+pool_timeout_seconds: 1.0
+routing:
+  cost_reference: 10000.0
+  cost_weight: 1.0
+  ewma_alpha: 0.2
+  gamma: 0.5
+  output_weight: 1.0
+  policy: prefix_v2
+  prefix_history_retention: 0.85
+  prefix_hit_increment: 0.25
+  prefix_load_soft_limit: 0.75
+  prefix_max_entries: 1024
+  prefix_tokens: 32
+  prefix_ttl_seconds: 300.0
+  prompt_weight: 1.0
+  queue_weight: 1.0
+tokenizer_mode: fixture
+tokenizer_slots: 2
+tokenizer_timeout_seconds: 5.0
+workers:
+- capacity: 4
+  endpoint: http://127.0.0.1:39007/
+  model: fake-model
+  worker_id: worker-0
+- capacity: 4
+  endpoint: http://127.0.0.1:45377/
+  model: fake-model
+  worker_id: worker-1

@@ -1,0 +1,3 @@
+workload,comparison_group,policy,total_rounds,usable_rounds,at_least_three_usable_rounds,throughput_mean,throughput_min,throughput_max,ttft_p95_mean,ttft_p95_min,ttft_p95_max,e2e_p95_mean,e2e_p95_min,e2e_p95_max,round_outcomes
+hot_prefix,47b8be789c9d,prefix,3,3,True,1,1,1,0.1,0.1,0.1,0.2,0.2,0.2,"[{'succeeded': 1}, {'succeeded': 1}, {'succeeded': 1}]"
+hot_prefix,9475ce0ed97f,prefix_v2,3,3,True,1,1,1,0.1,0.1,0.1,0.2,0.2,0.2,"[{'succeeded': 1}, {'succeeded': 1}, {'succeeded': 1}]"

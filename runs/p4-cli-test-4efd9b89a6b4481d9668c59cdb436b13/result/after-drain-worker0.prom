@@ -1,0 +1,6 @@
+# TYPE vllm:num_requests_running gauge
+vllm:num_requests_running 0
+# TYPE vllm:num_requests_waiting gauge
+vllm:num_requests_waiting 0
+# TYPE fake_requests_total counter
+fake_requests_total 1
