@@ -1,0 +1,1 @@
+{"schema_version":1,"workload":"mixed","seed":42,"duration":0.3,"rate":10.0,"warmup":[],"requests":[{"offset":0.0,"group":"short","prompt":"hello","max_tokens":16},{"offset":0.1,"group":"short","prompt":"hello world","max_tokens":16}]}

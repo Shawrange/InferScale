@@ -1,0 +1,38 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Benchmark generated artifacts
+runs/p4-formal-results/
+runs/p4-formal-logs/
+runs/p4-trial-*/
+runs/p4-logs/
+runs/p4-comparison-*/
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*~
+
+# Build / packaging
+build/
+dist/
+*.egg-info/

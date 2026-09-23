@@ -1,0 +1,19 @@
+{
+  "hardware": "2 x NVIDIA GeForce RTX 4090 24GB",
+  "driver": "595.58.03",
+  "backend_versions": {
+    "vllm": "0.23.0",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.6"
+  },
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "dtype": "bfloat16",
+  "replicas": 2,
+  "tensor_parallel_size_per_replica": 1,
+  "max_model_len": 2048,
+  "prefix_caching": true,
+  "gpu_memory_utilization": 0.92,
+  "generation_config": "Qwen2.5-7B-Instruct generation_config.json: do_sample=true, temperature=0.7, top_p=0.8, top_k=20, repetition_penalty=1.05, eos_token_id=[151645,151643], pad_token_id=151643, bos_token_id=151643; per-request max_tokens is supplied by the P4 trace (e.g. 32/256 depending on workload item)",
+  "note": "P3 submitted environment used as a starting point; confirm every field for P4."
+}

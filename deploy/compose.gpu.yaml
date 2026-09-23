@@ -1,0 +1,46 @@
+# Candidate backend version is explicit in gpu.env.example; GPU validation is pending.
+services:
+  worker-0:
+    image: ${VLLM_IMAGE:?Set a pinned vLLM image in deploy/gpu.env}
+    command: ["--model", "/model", "--served-model-name", "inference-model", "--host", "0.0.0.0", "--port", "8000", "--tensor-parallel-size", "1", "--max-model-len", "${CONTEXT_LIMIT:-2048}", "--gpu-memory-utilization", "${GPU_MEMORY_UTILIZATION:-0.85}", "--enable-prefix-caching", "--generation-config", "vllm"]
+    volumes:
+      - type: bind
+        source: ${MODEL_DIR:?Set the absolute model snapshot directory}
+        target: /model
+        read_only: true
+    shm_size: 4gb
+    ports: ["127.0.0.1:8100:8000"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${GPU_0:-0}"]
+              capabilities: [gpu]
+  worker-1:
+    image: ${VLLM_IMAGE:?Set a pinned vLLM image in deploy/gpu.env}
+    command: ["--model", "/model", "--served-model-name", "inference-model", "--host", "0.0.0.0", "--port", "8000", "--tensor-parallel-size", "1", "--max-model-len", "${CONTEXT_LIMIT:-2048}", "--gpu-memory-utilization", "${GPU_MEMORY_UTILIZATION:-0.85}", "--enable-prefix-caching", "--generation-config", "vllm"]
+    volumes:
+      - type: bind
+        source: ${MODEL_DIR:?Set the absolute model snapshot directory}
+        target: /model
+        read_only: true
+    shm_size: 4gb
+    ports: ["127.0.0.1:8101:8000"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${GPU_1:-1}"]
+              capabilities: [gpu]
+  gateway:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: inferscale:local
+    command: ["/app/.venv/bin/python", "-m", "inferscale.main", "--host", "0.0.0.0", "--config", "configs/server.yaml"]
+    volumes:
+      - ../configs/server.yaml:/app/configs/server.yaml:ro
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on: [worker-0, worker-1]

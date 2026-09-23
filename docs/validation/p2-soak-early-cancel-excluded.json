@@ -1,0 +1,367 @@
+{
+  "kind": "CPU synthetic real-socket soak, not performance evidence",
+  "requested_seconds": 1200.0,
+  "elapsed_seconds": 1200.1560000000172,
+  "client_results": {
+    "client_cancelled": 13298,
+    "completed": 26596
+  },
+  "ledger": {
+    "active_requests": 0,
+    "active_attempts": 0,
+    "workers": {
+      "worker-0": {
+        "active_attempts": 0,
+        "reserved_cost": 0.0
+      },
+      "worker-1": {
+        "active_attempts": 0,
+        "reserved_cost": 0.0
+      }
+    },
+    "outcomes": {
+      "completed": 26596
+    }
+  },
+  "gateway_counters": {
+    "completed": 26596
+  },
+  "fake_workers": [
+    {
+      "total": 13298,
+      "active": 0,
+      "completed": 13298,
+      "truncated": 0,
+      "cancelled": 0
+    },
+    {
+      "total": 13298,
+      "active": 0,
+      "completed": 13298,
+      "truncated": 0,
+      "cancelled": 0
+    }
+  ],
+  "samples": [
+    {
+      "seconds": 0.86,
+      "python_bytes": 5666191,
+      "python_peak_bytes": 10106894,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 30.98,
+      "python_bytes": 7599188,
+      "python_peak_bytes": 10106894,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 61.05,
+      "python_bytes": 5864148,
+      "python_peak_bytes": 11723968,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 91.2,
+      "python_bytes": 6469823,
+      "python_peak_bytes": 11723968,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 121.34,
+      "python_bytes": 8418689,
+      "python_peak_bytes": 11723968,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 151.42,
+      "python_bytes": 7426031,
+      "python_peak_bytes": 11723968,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 181.58,
+      "python_bytes": 8331711,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 211.72,
+      "python_bytes": 7994375,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 241.72,
+      "python_bytes": 6823475,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 271.84,
+      "python_bytes": 6810541,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 301.98,
+      "python_bytes": 6466681,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 331.98,
+      "python_bytes": 8484920,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 12,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 362.05,
+      "python_bytes": 8616123,
+      "python_peak_bytes": 11805240,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 392.17,
+      "python_bytes": 7873008,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 12,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 422.27,
+      "python_bytes": 7959913,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 452.47,
+      "python_bytes": 5855425,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 482.55,
+      "python_bytes": 5852020,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 512.69,
+      "python_bytes": 7705721,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 542.84,
+      "python_bytes": 9264992,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 572.89,
+      "python_bytes": 8004680,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 603.05,
+      "python_bytes": 9742022,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 633.17,
+      "python_bytes": 5854059,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 663.33,
+      "python_bytes": 6365488,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 13,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 693.36,
+      "python_bytes": 7782140,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 723.45,
+      "python_bytes": 9453006,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 753.47,
+      "python_bytes": 8145497,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 783.53,
+      "python_bytes": 8031737,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 13,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 813.59,
+      "python_bytes": 8783493,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 843.69,
+      "python_bytes": 8043456,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 873.75,
+      "python_bytes": 9194819,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 903.91,
+      "python_bytes": 8759998,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 933.91,
+      "python_bytes": 9262059,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 963.92,
+      "python_bytes": 8306846,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 993.92,
+      "python_bytes": 9950449,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1024.02,
+      "python_bytes": 8483474,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1054.05,
+      "python_bytes": 8993216,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1084.14,
+      "python_bytes": 9748100,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1114.19,
+      "python_bytes": 8374608,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1144.22,
+      "python_bytes": 10992338,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    },
+    {
+      "seconds": 1174.23,
+      "python_bytes": 8145931,
+      "python_peak_bytes": 11984372,
+      "asyncio_tasks": 15,
+      "upstream_connections": 0,
+      "active_requests": 0
+    }
+  ]
+}

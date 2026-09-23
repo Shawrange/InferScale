@@ -1,0 +1,147 @@
+{
+  "model": "inference-model",
+  "checks": [
+    {
+      "endpoint": "http://127.0.0.1:8100",
+      "chat": false,
+      "stream": false,
+      "seconds": 0.1546502709388733,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8100",
+      "chat": false,
+      "stream": true,
+      "seconds": 0.14178058318793774,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8101",
+      "chat": false,
+      "stream": false,
+      "seconds": 0.16084094159305096,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8101",
+      "chat": false,
+      "stream": true,
+      "seconds": 0.1422889418900013,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8000",
+      "chat": false,
+      "stream": false,
+      "seconds": 0.15783040970563889,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8000",
+      "chat": false,
+      "stream": true,
+      "seconds": 0.16559072583913803,
+      "usage": {
+        "prompt_tokens": 8,
+        "total_tokens": 16,
+        "completion_tokens": 8
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8100",
+      "chat": true,
+      "stream": false,
+      "seconds": 0.06795457564294338,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8100",
+      "chat": true,
+      "stream": true,
+      "seconds": 0.06441587954759598,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8101",
+      "chat": true,
+      "stream": false,
+      "seconds": 0.06771909818053246,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8101",
+      "chat": true,
+      "stream": true,
+      "seconds": 0.06404979154467583,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8000",
+      "chat": true,
+      "stream": false,
+      "seconds": 0.08537304401397705,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "endpoint": "http://127.0.0.1:8000",
+      "chat": true,
+      "stream": true,
+      "seconds": 0.09884314425289631,
+      "usage": {
+        "prompt_tokens": 37,
+        "total_tokens": 40,
+        "completion_tokens": 3
+      }
+    }
+  ],
+  "gpu_cancel_verified": false,
+  "performance_verified": false,
+  "gateway_metrics": "# TYPE inferscale_active_requests gauge\ninferscale_active_requests 0\n# TYPE inferscale_active_attempts gauge\ninferscale_active_attempts 0\n# TYPE inferscale_ready_workers gauge\ninferscale_ready_workers 2\n# TYPE inferscale_retries_total counter\ninferscale_retries_total 0\n# TYPE inferscale_partial_failures_total counter\ninferscale_partial_failures_total 0\n# TYPE inferscale_cleanup_failures_total counter\ninferscale_cleanup_failures_total 0\n# TYPE inferscale_cancelled_total counter\ninferscale_cancelled_total 0\n# TYPE inferscale_timeouts_total counter\ninferscale_timeouts_total 0\n# TYPE inferscale_rejected_total counter\ninferscale_rejected_total 0\n# TYPE inferscale_completed_total counter\ninferscale_completed_total 4\n# TYPE inferscale_failed_total counter\ninferscale_failed_total 0\n# TYPE inferscale_first_output_wait_seconds summary\ninferscale_first_output_wait_seconds_count 2\ninferscale_first_output_wait_seconds_sum 0.07000653631985188\n",
+  "protocol_usage_passed": true
+}

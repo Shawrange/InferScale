@@ -1,0 +1,93 @@
+{
+  "planned": 120,
+  "sent": 113,
+  "outcomes": {
+    "not_sent": 7,
+    "succeeded": 110,
+    "rejected": 3,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "error_subtypes": {
+    "tokenizer_capacity_exceeded": 3,
+    "window_closed": 7
+  },
+  "window_seconds": 60.0,
+  "window_successes": 106,
+  "drain_successes": 4,
+  "request_throughput": 1.7666666666666666,
+  "output_token_throughput": 233.18333333333334,
+  "window_usage_complete": true,
+  "success_usage_coverage": 1.0,
+  "rejected_per_sent": 0.02654867256637168,
+  "failed_per_sent": 0.0,
+  "rejected_per_planned": 0.025,
+  "failed_per_planned": 0.0,
+  "ttft_seconds": {
+    "count": 110,
+    "p50": 0.09938066080212593,
+    "p95": 0.13338020732626318
+  },
+  "e2e_seconds": {
+    "count": 110,
+    "p50": 0.6647045044228435,
+    "p95": 4.315809807088226
+  },
+  "failed_or_cancelled_or_rejected_seconds": {
+    "count": 3,
+    "p50": 0.04028964415192604,
+    "p95": 0.04213892165571451
+  },
+  "tpot_estimate_seconds": {
+    "count": 110,
+    "p50": 0.01594226000047081,
+    "p95": 0.01647065667143347
+  },
+  "chunk_interval_seconds": {
+    "count": 14606,
+    "p50": 0.015961747616529465,
+    "p95": 0.01750214956700802
+  },
+  "scheduled_to_sent_seconds": {
+    "count": 113,
+    "p50": 0.0001915227621793747,
+    "p95": 0.000928879156708714
+  },
+  "slo": {
+    "ttft_seconds": 1,
+    "e2e_seconds": 10,
+    "goodput": 1.7666666666666666
+  },
+  "attempt_count": 110,
+  "final_worker_distribution": {
+    "worker-1": 55,
+    "worker-0": 55
+  },
+  "length_finished_successes": 100,
+  "attempt_evidence": {
+    "complete": true,
+    "missing_request_ids": [],
+    "unfinished_attempt_ids": []
+  },
+  "cache_cohort_deltas": {
+    "before-worker0": {
+      "valid": true,
+      "unit": "tokens (verify backend HELP)",
+      "queries": 4580.0,
+      "hits": 880.0,
+      "hit_ratio": 0.19213973799126638
+    },
+    "before-worker1": {
+      "valid": true,
+      "unit": "tokens (verify backend HELP)",
+      "queries": 28020.0,
+      "hits": 880.0,
+      "hit_ratio": 0.03140613847251963
+    }
+  },
+  "comparison_exclusion_reasons": [
+    "closed_loop_is_smoke_only",
+    "load_generator_limited",
+    "uncontrolled_cache_state"
+  ]
+}

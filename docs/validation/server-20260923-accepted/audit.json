@@ -1,0 +1,93 @@
+{
+  "archive_sha256": "d630a7cec3577e7dbb7742a5a583e4470b4352195d731a3dd1ad820cf3233d31",
+  "files": {
+    "gpu-smoke.json": "eb19cbde78b3e09890e48d0ae236754e433472cd360c8c4aaa930a4b4e90b640",
+    "server.yaml": "17ec457e5ef4fc6406e5820e98a60a35aeb4e4c55ea38532561381be4565c15c",
+    "nvidia-smi.txt": "e01078c71630da5eb82ab1a0be81fe15d51c024d421360037f02255b084401c4",
+    "vllm-processes.txt": "177982f9b3261ca7559e0beb91f8ad70ca9468d0893edf89fbb2d87361b4241f",
+    "backend-versions.txt": "a1d68e2285e830a75638c6a97818b85886dc2838e1f80cd26d01c78f3bb9fb08",
+    "model.txt": "4b324dd42eaea5b1a6712e4751ad968255d5e549b380c46bdd451ef7a2ccb946",
+    "worker0-models.json": "31678453c8002c2ba18aa47656bc512e53d25323a7c1a3380a6a99bf1424535a",
+    "worker1-models.json": "a23cab165f7a3a21aa137184f22c09222897e2cba33b865619735f8e22ea0cb5",
+    "worker0-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "worker1-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "NOTES.txt": "4f85efa72b40f30951e8189fad0ce49b01748b8a9803096a9f37f791eb90255a",
+    "gateway-cancel.log": "d29d3700405dd6b24a8afa839f2aa664ac518e2cd69a3089a7b1c9f24767e028",
+    "cancel-after.txt": "6ae94e9958e74943444589a69424b96da1a7f8578ec2d6b47c86fc6f654556cc",
+    "cancel-gateway-events.txt": "d79263e96b8650ebcbe4cb1a229ce88a59ee9e077eac47bd31f8d3d7f1b0bbce",
+    "gateway-least-load.log": "777cc2d2a463557cfd25884a09c0faa32a8816a6264d7834b5f020713635af59",
+    "gpu-least-load-smoke.json": "c8ee5057eeb4ad2955c12f4a6d2ac15d8ea4aa631937ba7853df83b2f23b745f",
+    "gateway-cost.log": "4a43474792ac64d42dd8e807152c5368bc1820102ab005fdfbac6c880b05a583",
+    "gpu-cost-smoke.json~": "cbcfb3105fce58292bceb2ecfb2c8602d894883cd8292fda63e4fee4e75fc081",
+    "gateway-prefix.log": "aa8168852808ae948e08ad7590d2cc45554fa7b70120cf7938bc0962dba296f1",
+    "gpu-prefix-smoke.json": "499bd4214f2cdf15d82fc131c20e0359288b3cebe83371393dfd718a93b20f84",
+    "worker0-metrics.prom": "28f7a517d6d60caa59ee509bfb1d3bc92148e8f3de4ea8295ab88dc1270d61dc",
+    "worker1-metrics.prom": "6ac0afc07286c9bddbd802ee07259e9f26610d0148052da6819b2bc2c5157903",
+    "worker0-key-metrics.txt": "839984e0e47f91c692a26fd688b920d257787853e37b187970b419e39c40691f",
+    "worker1-key-metrics.txt": "3408f424740a7f949108840008681315d42a7bd900166f9359b0fe54bb6ea2bb",
+    "gpu-cost-smoke.json": "cc7b9f71f00d40adc53551e7ae8f7a5df869ba4341317d8c24ef73d5be338d91"
+  },
+  "policies": {
+    "least_load": {
+      "routing_decisions": 4,
+      "completed": 4,
+      "scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "cost": {
+      "routing_decisions": 4,
+      "completed": 4,
+      "scores": [
+        0.004,
+        0.004,
+        0.0069,
+        0.0069
+      ],
+      "affinities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "prefix": {
+      "routing_decisions": 4,
+      "completed": 4,
+      "scores": [
+        0.004,
+        0.004,
+        0.0069,
+        -0.2431
+      ],
+      "affinities": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "round_robin": {
+      "protocol_cases": 12,
+      "gateway_completed": 4
+    }
+  },
+  "protocol_cases_total": 48,
+  "p3_acceptance": "passed under recruiting-project scope",
+  "cancellation_acceptance": {
+    "status": "accepted",
+    "basis": "explicit user manual confirmation on 2026-09-23",
+    "automatically_proven_by_archive": false
+  },
+  "performance_verified": false,
+  "scope": "offline artifact consistency checks; no remote rerun; json~ excluded as historical backup"
+}

@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "b6c3a0797fb7be3396c0bb0032033864adda17113727ebe73854eb6afb75ebc6",
+  "files": {
+    "gpu-smoke.json": "eb19cbde78b3e09890e48d0ae236754e433472cd360c8c4aaa930a4b4e90b640",
+    "server.yaml": "17ec457e5ef4fc6406e5820e98a60a35aeb4e4c55ea38532561381be4565c15c",
+    "nvidia-smi.txt": "e01078c71630da5eb82ab1a0be81fe15d51c024d421360037f02255b084401c4",
+    "vllm-processes.txt": "177982f9b3261ca7559e0beb91f8ad70ca9468d0893edf89fbb2d87361b4241f",
+    "backend-versions.txt": "a1d68e2285e830a75638c6a97818b85886dc2838e1f80cd26d01c78f3bb9fb08",
+    "model.txt": "4b324dd42eaea5b1a6712e4751ad968255d5e549b380c46bdd451ef7a2ccb946",
+    "worker0-models.json": "31678453c8002c2ba18aa47656bc512e53d25323a7c1a3380a6a99bf1424535a",
+    "worker1-models.json": "a23cab165f7a3a21aa137184f22c09222897e2cba33b865619735f8e22ea0cb5",
+    "worker0-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "worker1-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "NOTES.txt": "4f85efa72b40f30951e8189fad0ce49b01748b8a9803096a9f37f791eb90255a"
+  },
+  "checks": {
+    "complete_12_case_matrix": true,
+    "usage_arithmetic_and_prompt_consistency": true,
+    "gateway_completed_4_idle_healthy_2": true,
+    "sample_token_ids_equal": true,
+    "config_and_model_endpoints_consistent": true
+  },
+  "scope": "Offline consistency audit of submitted evidence; no remote execution",
+  "cancellation": "manual claim only; process evidence missing",
+  "performance": "not verified"
+}

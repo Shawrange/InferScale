@@ -1,0 +1,185 @@
+{
+  "seed": 42,
+  "jobs": [
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "cost"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "least_load"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "prefix"
+    },
+    {
+      "workload": "mixed",
+      "round": 1,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "prefix"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "cost"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "mixed",
+      "round": 2,
+      "policy": "least_load"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "least_load"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "prefix"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "cost"
+    },
+    {
+      "workload": "mixed",
+      "round": 3,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "least_load"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "cost"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 1,
+      "policy": "prefix"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "least_load"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "cost"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "prefix"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 2,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "least_load"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "prefix"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "cost"
+    },
+    {
+      "workload": "shared_prefix",
+      "round": 3,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "cost"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "least_load"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 1,
+      "policy": "prefix"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "least_load"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "prefix"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 2,
+      "policy": "cost"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "round_robin"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "cost"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "least_load"
+    },
+    {
+      "workload": "hot_prefix",
+      "round": 3,
+      "policy": "prefix"
+    }
+  ]
+}

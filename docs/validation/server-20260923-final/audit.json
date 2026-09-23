@@ -1,0 +1,108 @@
+{
+  "archive_sha256": "b0f1d22ba00c3e4016a1c8b40eb7a85a18c68c717941169b9306dff044f243fb",
+  "files": {
+    "gpu-smoke.json": "eb19cbde78b3e09890e48d0ae236754e433472cd360c8c4aaa930a4b4e90b640",
+    "server.yaml": "17ec457e5ef4fc6406e5820e98a60a35aeb4e4c55ea38532561381be4565c15c",
+    "nvidia-smi.txt": "e01078c71630da5eb82ab1a0be81fe15d51c024d421360037f02255b084401c4",
+    "vllm-processes.txt": "177982f9b3261ca7559e0beb91f8ad70ca9468d0893edf89fbb2d87361b4241f",
+    "backend-versions.txt": "a1d68e2285e830a75638c6a97818b85886dc2838e1f80cd26d01c78f3bb9fb08",
+    "model.txt": "4b324dd42eaea5b1a6712e4751ad968255d5e549b380c46bdd451ef7a2ccb946",
+    "worker0-models.json": "31678453c8002c2ba18aa47656bc512e53d25323a7c1a3380a6a99bf1424535a",
+    "worker1-models.json": "a23cab165f7a3a21aa137184f22c09222897e2cba33b865619735f8e22ea0cb5",
+    "worker0-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "worker1-tokenize.json": "73fc9edaa24ba0be208f38ff7095ebf51aba302e5805c9a079c6e350d97e1a40",
+    "NOTES.txt": "4f85efa72b40f30951e8189fad0ce49b01748b8a9803096a9f37f791eb90255a",
+    "gateway-cancel.log": "d29d3700405dd6b24a8afa839f2aa664ac518e2cd69a3089a7b1c9f24767e028",
+    "cancel-after.txt": "6ae94e9958e74943444589a69424b96da1a7f8578ec2d6b47c86fc6f654556cc",
+    "cancel-gateway-events.txt": "d79263e96b8650ebcbe4cb1a229ce88a59ee9e077eac47bd31f8d3d7f1b0bbce",
+    "gateway-least-load.log": "3819449943621a8bb75a80c71edf8dbc5d08a20232d5aba4e3788ad234d1facb",
+    "gpu-least-load-smoke.json": "a474a92b2237c372ded5e053fc9e62051003d5c2e4e469ef9d31b3f6dfb98a9a",
+    "gateway-cost.log": "9bb862bac869fd529a4fe534705f440cd7d54f69b867d34fbadb92bd947fec50",
+    "gpu-cost-smoke.json~": "cbcfb3105fce58292bceb2ecfb2c8602d894883cd8292fda63e4fee4e75fc081",
+    "gateway-prefix.log": "9fc302e4a7cc9c34f7f72fd32c83c16368bbe13af8d7a488942d8361cbdaaa7e",
+    "gpu-prefix-smoke.json": "40f23791e533c437d046c5fdbf175920b556a55b7185170db3a59b9e7cf28a82",
+    "worker0-metrics.prom": "28f7a517d6d60caa59ee509bfb1d3bc92148e8f3de4ea8295ab88dc1270d61dc",
+    "worker1-metrics.prom": "6ac0afc07286c9bddbd802ee07259e9f26610d0148052da6819b2bc2c5157903",
+    "worker0-key-metrics.txt": "839984e0e47f91c692a26fd688b920d257787853e37b187970b419e39c40691f",
+    "worker1-key-metrics.txt": "3408f424740a7f949108840008681315d42a7bd900166f9359b0fe54bb6ea2bb"
+  },
+  "smokes": {
+    "gpu-smoke.json": {
+      "protocol_report_passed": true,
+      "cases": 12
+    },
+    "gpu-least-load-smoke.json": {
+      "protocol_report_passed": true,
+      "cases": 12
+    },
+    "gpu-cost-smoke.json~": {
+      "protocol_report_passed": true,
+      "cases": 12
+    },
+    "gpu-prefix-smoke.json": {
+      "protocol_report_passed": true,
+      "cases": 12
+    }
+  },
+  "policy_checks": {
+    "least_load": {
+      "observed": [
+        "round_robin"
+      ],
+      "requests": 4,
+      "fallback_reasons": [
+        "None"
+      ]
+    },
+    "cost": {
+      "observed": [
+        "round_robin"
+      ],
+      "requests": 4,
+      "fallback_reasons": [
+        "None"
+      ]
+    },
+    "prefix": {
+      "observed": [
+        "round_robin"
+      ],
+      "requests": 4,
+      "fallback_reasons": [
+        "None"
+      ]
+    }
+  },
+  "gateway_cancellation": {
+    "event": "request_finished",
+    "request_id": "04b91ea00fdc4dd3bd0ef0b59e143b70",
+    "outcome": "cancelled",
+    "code": null,
+    "seconds": 1.027358751744032,
+    "first_output_at": 14662638.586168015,
+    "response_started": true,
+    "bytes_sent": 15106
+  },
+  "backend_metrics": {
+    "0": {
+      "prefix_enabled": true,
+      "query_tokens": 826.0,
+      "hit_tokens": 528.0,
+      "aborts": 0.0,
+      "length_finishes": 1.0,
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    "1": {
+      "prefix_enabled": true,
+      "query_tokens": 586.0,
+      "hit_tokens": 368.0,
+      "aborts": 0.0,
+      "length_finishes": 1.0,
+      "running": 0.0,
+      "waiting": 0.0
+    }
+  },
+  "gpu_abort_proven": false,
+  "scope": "offline evidence audit; no server rerun"
+}

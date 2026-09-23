@@ -1,0 +1,66 @@
+[
+  {
+    "path": "src\\inferscale\\__init__.py",
+    "Hash": "964EE42BAE4FF2B3EADD88F0AEFA39092C099997147976B4FEAE9F2ED20F1D60"
+  },
+  {
+    "path": "src\\inferscale\\api.py",
+    "Hash": "E87DE74BD7A087F55EF3D1F464B61D2DAA420497495AD8722FE0F15C34FE3EC3"
+  },
+  {
+    "path": "src\\inferscale\\config.py",
+    "Hash": "DF850F690469D4E4DC005B550C708F923581E179F588504F6A1926FB41880716"
+  },
+  {
+    "path": "src\\inferscale\\features.py",
+    "Hash": "898D98BF602DD02C88C038E9A312F91C9C32E01058D5DEB8C9079D896964C824"
+  },
+  {
+    "path": "src\\inferscale\\ledger.py",
+    "Hash": "F2384273DB8F11C743A37BE5577F1E31123C598634BB2D54A884C21B7A698304"
+  },
+  {
+    "path": "src\\inferscale\\lifecycle.py",
+    "Hash": "067E04E8C02A3A74674A7842418A443E485BDB883D6A3241CB3C66F5932C078D"
+  },
+  {
+    "path": "src\\inferscale\\main.py",
+    "Hash": "D25ECD85E06BDAAF167C9B83A3AAC70770BA2750211F13CED3AAB5133CAD934D"
+  },
+  {
+    "path": "src\\inferscale\\models.py",
+    "Hash": "83F4F2B789A617C722B8945E05CDD553D92BDCF80545716256A9ABE2DA008E5E"
+  },
+  {
+    "path": "src\\inferscale\\policies.py",
+    "Hash": "AA27D4FBC3DFD7B243AFAB689FBB2900497E3359B83ECA467D99C73FE71AACAA"
+  },
+  {
+    "path": "src\\inferscale\\proxy.py",
+    "Hash": "D8B8001FC81B55C8FC0DED473AA6F1FB7FF2294B489F103394095DD553D1CD3D"
+  },
+  {
+    "path": "src\\inferscale\\registry.py",
+    "Hash": "5B0E5C5F6CDEF3C8C7AC2E42F1B2451D9423D9D498587850EE2CA1BDAE2D3648"
+  },
+  {
+    "path": "src\\inferscale\\samples.py",
+    "Hash": "AD6D58785530CE800B590C6A62DC11486739BDE9EF64AE0CB729003A1988FD2B"
+  },
+  {
+    "path": "src\\inferscale\\sse.py",
+    "Hash": "B29A4FB23BD39C888BD7631C35EC96E4FFD49496B140E1D73E609B69503393DB"
+  },
+  {
+    "path": "src\\inferscale\\telemetry.py",
+    "Hash": "56EAFAC578BDEFBA0AA9787F158D64FA48D1BFFDE1D2C6CA44E177C6E4C43851"
+  },
+  {
+    "path": "src\\inferscale\\testing\\__init__.py",
+    "Hash": "1CE7BC7EFC2CF637A9C2CFB8C30969BE218428E8445F27C36476BA4ADFD2A7CF"
+  },
+  {
+    "path": "src\\inferscale\\testing\\worker.py",
+    "Hash": "385CC32E01B6061274865AEEF7724F692A8DE32C5BDBD8F32EF04D5FE5DDD8B3"
+  }
+]

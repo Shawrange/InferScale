@@ -1,0 +1,85 @@
+{
+  "planned": 2,
+  "sent": 2,
+  "outcomes": {
+    "not_sent": 0,
+    "succeeded": 2,
+    "rejected": 0,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "error_subtypes": {},
+  "window_seconds": 0.3,
+  "window_successes": 2,
+  "drain_successes": 0,
+  "request_throughput": 6.666666666666667,
+  "output_token_throughput": 20.0,
+  "window_usage_complete": true,
+  "success_usage_coverage": 1.0,
+  "rejected_per_sent": 0.0,
+  "failed_per_sent": 0.0,
+  "rejected_per_planned": 0.0,
+  "failed_per_planned": 0.0,
+  "ttft_seconds": {
+    "count": 2,
+    "p50": 0.01706813834607601,
+    "p95": 0.01763394195586443
+  },
+  "e2e_seconds": {
+    "count": 2,
+    "p50": 0.023656919598579407,
+    "p95": 0.02473199088126421
+  },
+  "failed_or_cancelled_or_rejected_seconds": {
+    "count": 0,
+    "p50": null,
+    "p95": null
+  },
+  "tpot_estimate_seconds": {
+    "count": 2,
+    "p50": 0.0015515335835516453,
+    "p95": 0.0022383848670870067
+  },
+  "chunk_interval_seconds": {
+    "count": 4,
+    "p50": 0.0014278683811426163,
+    "p95": 0.002905746735632419
+  },
+  "scheduled_to_sent_seconds": {
+    "count": 2,
+    "p50": 0.0006519591435790034,
+    "p95": 0.0010514002479612775
+  },
+  "slo": {
+    "ttft_seconds": 1,
+    "e2e_seconds": 2,
+    "goodput": 6.666666666666667
+  },
+  "attempt_count": 2,
+  "final_worker_distribution": {
+    "worker-0": 1,
+    "worker-1": 1
+  },
+  "length_finished_successes": 0,
+  "attempt_evidence": {
+    "complete": true,
+    "missing_request_ids": [],
+    "unfinished_attempt_ids": []
+  },
+  "cache_cohort_deltas": {
+    "before-worker0": {
+      "valid": false,
+      "reason": "missing_series_or_counter_reset",
+      "hit_ratio": null
+    },
+    "before-worker1": {
+      "valid": false,
+      "reason": "missing_series_or_counter_reset",
+      "hit_ratio": null
+    }
+  },
+  "comparison_exclusion_reasons": [
+    "missing_environment_record",
+    "synthetic_backend"
+  ]
+}
